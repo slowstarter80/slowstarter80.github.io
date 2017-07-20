@@ -1,6 +1,6 @@
 ---
 layout: page
-title: slowstarter80's wiki
+title: wiki
 ---
 
 slowstarter80's wiki
