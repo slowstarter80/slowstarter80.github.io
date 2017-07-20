@@ -1,6 +1,6 @@
 ---
 layout: page
-title: wiki
+title: Posts
 ---
 
 # Main page
