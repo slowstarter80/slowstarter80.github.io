@@ -6,7 +6,7 @@ title: vim settings
 # vim settings
 
 * vim 
-[vim plugins]( https://github.com/slowstarter80/my_wiki/raw/master/vim_settings/vim_plugin.tar.gz "vim plugin files")
+[vim plugins]( /assets/files/vim_plugin.tar.gz "vim plugin files")
   * contains some plugins for syntax and colors.
   * extract this file to your home directory.  
     The changed code is below in c.vim.
@@ -21,7 +21,7 @@ title: vim settings
     hi def link cCustomClass Function 
     ```
 
-* vimrc [vim setting file(.vimrc)](https://github.com/slowstarter80/my_wiki/raw/master/vim_settings/vimrc.tar.gz)
+* vimrc [vim setting file(.vimrc)](/assets/files/vimrc.tar.gz ".vimrc file")
   * contains optional runtime configuration settings to initialize vim when it starts.
   * extract this file to your home directory.
   * below are major settings.
@@ -96,7 +96,7 @@ title: vim settings
     and add ",/out/" at the end of "skip" configuration varible.
     ```
 
-* mkglobal_xxxxxxxx.sh [mkglobal_xxxxxxxx.sh]( https://github.com/slowstarter80/my_wiki/raw/master/vim_settings/mkglobal.sh.tar.gz "mkglobal.tar.gz")
+* mkglobal_xxxxxxxx.sh [mkglobal_xxxxxxxx.sh]( /assets/files/mkglobal.sh.tar.gz "mkglobal.tar.gz")
   * makes a GNU Global DB file
   * run this script at your source root directory. Then, “GTAGS”, “GRTAGS” and “GPATH” will be generated.
 * usage in vim
