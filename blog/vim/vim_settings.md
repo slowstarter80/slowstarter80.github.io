@@ -1,5 +1,5 @@
 ---
-laybout: single
+layout: single
 title: vim settings
 ---
 
