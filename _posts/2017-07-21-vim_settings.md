@@ -149,4 +149,8 @@ comments: true
   * http://vim.wikia.com/wiki/Copy,_cut_and_paste
 * how to view man page in vim
   * http://daeny2.tistory.com/entry/vim-%ED%8E%B8%EC%A7%91%EA%B8%B0%EC%97%90%EC%84%9C-man-page-%EB%B3%B4%EA%B8%B0
+  
+  
+  
+  
 
