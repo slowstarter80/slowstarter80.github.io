@@ -138,7 +138,7 @@ comments: true
     You can use all options of global(1) except for ‘-c -n -p -q -u -v’ and all long name options. They are sent to global(1) as is. For example:
         :Gtags -gi paTtern        <- matches both 'PATTERN' and 'pattern'
         :Gtags -POi make          <- matches Makefile but not makeit.c
- ```    
+    ```
 
 # Other Useful vim command
 * CTRL + o : move to cursor to previous location in history
