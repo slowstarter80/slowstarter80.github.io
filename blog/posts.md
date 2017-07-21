@@ -6,6 +6,7 @@ title: Posts
 # Main page
 
 * [vim settings](https://github.com/slowstarter80/my_wiki/wiki/vim_settings)
+* [vim settings](/2017/07/21/vim_settings)
 * [Gtk/Gtkmm](https://github.com/slowstarter80/my_wiki/wiki/gtk_gtkmm)
 * [Kernel analysis](https://github.com/slowstarter80/my_wiki/wiki/kernel_analysis)
 * android
