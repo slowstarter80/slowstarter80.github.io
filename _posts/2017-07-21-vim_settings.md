@@ -1,6 +1,7 @@
 ---
 layout: post
 title: vim settings
+comments: true
 ---
 
 # vim settings
