@@ -1,5 +1,5 @@
 ---
-laybout: page
+laybout: single
 title: vim settings
 ---
 
