@@ -1,5 +1,25 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
 
-<script id="dsq-count-scr" src="//slowstarter80.disqus.com/count.js" async></script>
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% include analytics.html %}
+
+    <script id="dsq-count-scr" src="//slowstarter80.disqus.com/count.js" async></script>
+
+  </body>
+
+</html>
+
