@@ -1,6 +1,8 @@
 ---
 layout: post
 title: vim settings
+category: vim
+tag: vim
 comments: true
 ---
 
@@ -84,7 +86,7 @@ comments: true
 
 * GNU Global package in ubuntu repository is a little old. So it'd better get source code form web-site and install with source code.
 * Get latest source code from below site.
-  * https://www.gnu.org/software/global/download.html
+  * [https://www.gnu.org/software/global/download.html](https://www.gnu.org/software/global/download.html)
 * Build and install GNU global like below
     ```bash
     $ sh reconf.sh
@@ -144,11 +146,11 @@ comments: true
 * CTRL + o : move to cursor to previous location in history
 * CTRL + I : move to cursor to next location in history
 * mark
-  * http://vim.wikia.com/wiki/Using_marks
+  * [http://vim.wikia.com/wiki/Using_marks](http://vim.wikia.com/wiki/Using_marks)
 * copy,cut and paste
-  * http://vim.wikia.com/wiki/Copy,_cut_and_paste
+  * [http://vim.wikia.com/wiki/Copy,_cut_and_paste](http://vim.wikia.com/wiki/Copy,_cut_and_paste)
 * how to view man page in vim
-  * http://daeny2.tistory.com/entry/vim-%ED%8E%B8%EC%A7%91%EA%B8%B0%EC%97%90%EC%84%9C-man-page-%EB%B3%B4%EA%B8%B0
+  * [view man page in vim](http://daeny2.tistory.com/entry/vim-%ED%8E%B8%EC%A7%91%EA%B8%B0%EC%97%90%EC%84%9C-man-page-%EB%B3%B4%EA%B8%B0)
   
   
   
