@@ -8,6 +8,7 @@ layout: default
   {% if page.date %}
     <small>{{ page.date | date_to_string }}</small>
   {% endif %}
+  {% include post_tags.html %}
 </h2>
 
 {{ content }}
