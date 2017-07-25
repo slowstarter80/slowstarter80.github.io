@@ -4,7 +4,7 @@ title: kernel analysis
 categories: [linux, debugging]
 tags: [linux, kernel, debugging ]
 comments: true
-last_modified_at: "`r format(Sys.time(), '%d %B, %Y')`"
+last_modified_at: '`r format(Sys.time(), "%d %B, %Y")`'
 ---
 
 * kernel source download using git
