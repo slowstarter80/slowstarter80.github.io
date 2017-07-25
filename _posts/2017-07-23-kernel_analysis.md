@@ -4,7 +4,6 @@ title: kernel analysis
 categories: [linux, debugging]
 tags: [linux, kernel, debugging ]
 comments: true
-date: 2016-02-13T20:47:31+08:00
 last_modified_at: 2016-02-14T00:00:00+08:00
 ---
 
