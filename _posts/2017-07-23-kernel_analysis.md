@@ -17,7 +17,7 @@ $ git clone https://github.com/torvalds/linux.git
 $ git clone git://git.linaro.org/kernel/linux-linaro-stable.git -b linux-linaro-lsk-v4.4-rt
 ```
 * More information for linaro kernel can be found in below URL.
-  * https://wiki.linaro.org/LSK
+  * [https://wiki.linaro.org/LSK](https://wiki.linaro.org/LSK)
 * runtime_pm
 * suspend/resume
 * mmu
