@@ -24,15 +24,15 @@ comments: true
 
       int main(int argc, char* argv[])
       {
-		printf("\n");
-      		printf("My Gentoo ARM Init!!!\n");
-         
-        	for (int i = 0; i < 100; i++)
-		{
-        		sleep(1);
-        	}
-         
-      		return 0;
+              printf("\n");
+              printf("My Gentoo ARM Init!!!\n");
+                       
+              for (int i = 0; i < 100; i++)
+              {
+                      sleep(1);
+              }
+                     
+              return 0;
       }
 
       ```
