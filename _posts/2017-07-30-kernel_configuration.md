@@ -5,8 +5,8 @@ categories: [linux, kernel]
 tags: [linux, kernel ]
 comments: true
 --- 
-
-
+Last updated({{ site.time }})  
+  
 # Kernel configuration
 ## The way to do kernel configuration
   * Run the following command for a full list of make target
