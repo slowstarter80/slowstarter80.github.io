@@ -5,7 +5,8 @@ categories: [linux, kernel, debugging]
 tags: [linux, kernel, debugging, gdb]
 comments: true
 --- 
-
+Last updated({{ site.time }})  
+  
 # qemu 
 ## qemu-system-arm
   * run ARM virtual machine 
