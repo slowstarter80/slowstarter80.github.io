@@ -5,7 +5,7 @@ category: web
 tags: [web, jekyll]
 comments: true
 ---
-Last updated at({{ site.time }})
+Last updated({{ site.time }})
 
  gentoo linux에서 Jekyll을 설치하는 방법에 대하여 간단히 포스팅한다.
  Jekyll을 사용하기 위해서는 ruby, bundler, jekyll이 설치되어 있어야 한다.
