@@ -5,7 +5,8 @@ category: vim
 tag: vim
 comments: true
 ---
-
+Last updated({{ site.time }})  
+  
 # vim settings
 
 * vim 
