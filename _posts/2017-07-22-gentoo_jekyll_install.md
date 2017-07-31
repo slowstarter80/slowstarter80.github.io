@@ -7,6 +7,7 @@ comments: true
 ---
 Last updated({{ site.time }})
 
+
  gentoo linux에서 Jekyll을 설치하는 방법에 대하여 간단히 포스팅한다.
  Jekyll을 사용하기 위해서는 ruby, bundler, jekyll이 설치되어 있어야 한다.
  Jekyll은 simple, blog-aware, static site generator tool 로 ruby를 기반으로
