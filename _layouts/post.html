@@ -2,15 +2,15 @@
 layout: default
 ---
 
-<h2 class="post_title">
+<h2 class="container">
   {{ page.title }}
   {% if page.date %}
     <small>{{ page.date | date_to_string }}</small>
   {% endif %}
   <br />
   {% include post_tags.html %}
+  {{ page.content }}
 </h2>
-{{ content }}
 
 
 
