@@ -68,6 +68,6 @@ $
 
 
  ```
-gem "sass" "3.4.24"     # add this 
+gem "sass", "3.4.24"     # add this 
 ```
 
