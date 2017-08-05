@@ -24,10 +24,14 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  slowstarter80
 
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  date_format: "%b %-d, %Y"
 # Build settings
 markdown: kramdown
 #theme: jekyll-theme-cayman
-theme: Minima
+theme: minima
 plugins:
   - jekyll-feed
 
@@ -36,9 +40,9 @@ timezone: Asia/Seoul
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
+exclude:
+  - Gemfile
+  - Gemfile.lock
 #   - node_modules
 #   - vendor/bundle/
 #   - vendor/cache/
