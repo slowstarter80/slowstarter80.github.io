@@ -41,11 +41,12 @@ asm volatile(
   * To prevent code opmization by compiler, you need to use 'volatie' keyword.
   * Constraint characters may be prepended by a single constraint modifier. Constraints without a modifier specify read-only operands. Modifiers are: 
 
-| Modifier  | Specifies  |
-|:---------:|:-----------|
-| = 	| Write-only operand, usually used for all output operands |
-| + 	| Read-write operand, must be listed as an output operand  |
-| & 	| A register that should be used for output only           |
+    | Modifier  | Specifies  |
+    |:---------:|:-----------:|
+    | = 	| Write-only operand, usually used for all output operands |
+    | + 	| Read-write operand, must be listed as an output operand  |
+    | & 	| A register that should be used for output only           |
+    {:.mbtablestyle}
 
 
 

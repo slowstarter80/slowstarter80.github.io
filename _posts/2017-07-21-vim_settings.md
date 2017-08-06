@@ -1,94 +1,21 @@
 ---
 layout: post
-title: vim settings
+title: 코드 분석을 위한 vim 설정하기(gnu global,  vim plugin)
 category: vim
-tag: vim
+tag: [vim, gnu global]
 comments: true
 ---
 Last updated({{ site.time }})  
   
-# vim settings
+# gnu global 설정하기
+ gnu global 은 source code tagging system으로 코드 검색을 빠르게 할 수 있는
+ 기능을 제공하는 도구이다. bash terminal등에서 커맨드를 입력하여 사용하거나 또는 
+ vim, emacs등의 editor와 연동하여 사용 할 수도 있다. 여기에서는 vim과
+ 연동하여 사용하는 방법을 소개한다.
 
-* vim 
-[vim plugins]( /assets/files/vim_plugin.tar.gz "vim plugin files")
-  * contains some plugins for syntax and colors.
-  * extract this file to your home directory.  
-    The changed code is below in c.vim.
-    ```vim
-    " Highlight Class and Function names 
-    syn match    cCustomParen    "(" contains=cParen contains=cCppParen 
-    syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen 
-    syn match    cCustomScope    "::" 
-    syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope 
- 
-    hi def link cCustomFunc  Function 
-    hi def link cCustomClass Function 
-    ```
-
-* vimrc [vim setting file(.vimrc)](/assets/files/vimrc.tar.gz ".vimrc file")
-  * contains optional runtime configuration settings to initialize vim when it starts.
-  * extract this file to your home directory.
-  * below are major settings.
-  * Below are major settings
-    ```vim
-    hi Identifier cterm=underline ctermfg=146
-    hi Comment cterm=none ctermfg=247
-    hi CursorLine cterm=none ctermbg=236
-    hi cCustomFunc cterm=bold ctermfg=111
-    hi cCustomClass cterm=bold ctermfg=183
-    ...
-    let mapleader=","
-    ...
-    map <F2> :TlistToggle<CR>
-    map <F6> :cn<CR>
-    map <F5> :cp<CR>
-    map <F8> :cnewer<CR>
-    map <F7> :colder<CR>
-    map <Leader><F7> :cope<CR>
-    map <Leader><F8> :ccl<CR>
-    map <F9> :bnext<CR>
-    map <F10> :bprevious<CR>
-    nmap <Leader><F12> :TrinityToggleSourceExplorer<CR>
-    nmap <C-c> :!mkcscope.sh<CR>:cs kill -l<CR>:cs add $PWD/cscope.out<CR>
-     
-    "=============gnu global keymap=============
-     
-    nmap <Leader>gd :Gtags <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>gr :Gtags -r <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>gs :Gtags -s <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>gg :Gtags -go <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>gp :Gtags -Po <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>ge :Gtags -ge <C-R>=expand("<cword>")<CR><CR>
-     
-    nmap <Leader>igd :Gtags -i <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>igr :Gtags -ir <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>igs :Gtags -is <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>igg :Gtags -igo <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>igp :Gtags -iPo <C-R>=expand("<cword>")<CR><CR>
-    nmap <Leader>ige :Gtags -ige <C-R>=expand("<cword>")<CR><CR>
-     
-    nmap <Leader>ld :Gtags
-    nmap <Leader>lr :Gtags -r
-    nmap <Leader>ls :Gtags -s
-    nmap <Leader>lg :Gtags -go
-    nmap <Leader>lp :Gtags -Po
-    nmap <Leader>le :Gtags -ge
-     
-    nmap <Leader>ild :Gtags -i
-    nmap <Leader>ilr :Gtags -ir
-    nmap <Leader>ils :Gtags -is
-    nmap <Leader>ilg :Gtags -igo
-    nmap <Leader>ilp :Gtags -iPo
-    nmap <Leader>ile :Gtags -ige
-    ```
-
-
-# Use GNU Global in vim
-
-* GNU Global package in ubuntu repository is a little old. So it'd better get source code form web-site and install with source code.
-* Get latest source code from below site.
+* 리눅스 각 배포판에서도 GNU Global 을 설치 할 수 있도록 package를 제공하지만 약간 버전 업데이트가 느린 편이다. 최종 버전을 사용하기 위해서는 gnu global home page에서 직접 다운로드 받아야 한다.아래 링크에서 최종 버전을 다운로드 한다. 
   * [https://www.gnu.org/software/global/download.html](https://www.gnu.org/software/global/download.html)
-* Build and install GNU global like below
+* 다운로드 한 파일을 압축해제 한 후, 아래와 같이 빌드 및 설치를 한다. 
     ```bash
     $ sh reconf.sh
     $ ./configure --prefix=$HOME/bin
@@ -97,13 +24,17 @@ Last updated({{ site.time }})
     $ cp ~/bin/share/gtags/gtags.vim $HOME/.vim/plugin/
     $ cp ~/bin/share/gtags/gtags.conf $HOME/.globalrc
     $ vim $/HOME/.globalrc
-    and add ",/out/" at the end of "skip" configuration varible.
+    ## 여기에서 tag 생성시 제외할  폴더를 "skip" 설정 변수에 지정한다. 
     ```
 
-* mkglobal_xxxxxxxx.sh [mkglobal_xxxxxxxx.sh]( /assets/files/mkglobal.sh.tar.gz "mkglobal.tar.gz")
-  * makes a GNU Global DB file
-  * run this script at your source root directory. Then, “GTAGS”, “GRTAGS” and “GPATH” will be generated.
-* usage in vim
+* 코드의 root directory에서 아래 명령을 실행하면 "GTAGS", "GRTAGS" 그리고
+"GPATH" 파일이 생성된다. 
+    ```bash
+    $ gtags
+    ```
+* vim에서 gnu global 사용하기(referred from gnu global web-site)
+  * 아래처럼 vim의 ex mode에서 command 입력으로 사용할 수 있다.  .vimrc 에서
+  단축키를 설정하는 방법은 아래에서 추가로 설명한다. 
     ```vim
     To go to main, you can say
         :Gtags main
@@ -143,17 +74,95 @@ Last updated({{ site.time }})
         :Gtags -POi make          <- matches Makefile but not makeit.c
     ```
 
-# Other Useful vim command
-* CTRL + o : move to cursor to previous location in history
-* CTRL + I : move to cursor to next location in history
-* mark
-  * [http://vim.wikia.com/wiki/Using_marks](http://vim.wikia.com/wiki/Using_marks)
-* copy,cut and paste
-  * [http://vim.wikia.com/wiki/Copy,_cut_and_paste](http://vim.wikia.com/wiki/Copy,_cut_and_paste)
-* how to view man page in vim
-  * [view man page in vim](http://daeny2.tistory.com/entry/vim-%ED%8E%B8%EC%A7%91%EA%B8%B0%EC%97%90%EC%84%9C-man-page-%EB%B3%B4%EA%B8%B0)
-  
-  
-  
-  
 
+* [vim plugins]( /assets/files/vim_plugin.tar.gz "vim plugin files")
+  * 첨부 파일에 syntax 및 color 관련 plugin, 기타 개인적으로 사용하는
+  plugin(Taglist, NERDTree) 등이 포함되어 있다. 필요한 경우, 첨부 파일을
+  다운받아 개인 계정의 home directory에 압축을 풀면 된다.  
+    ex) 수정 사항 in c.vim.
+    ```vim
+    " Highlight Class and Function names 
+    syn match    cCustomParen    "(" contains=cParen contains=cCppParen 
+    syn match    cCustomFunc     "\w\+\s*(\@=" contains=cCustomParen 
+    syn match    cCustomScope    "::" 
+    syn match    cCustomClass    "\w\+\s*::" contains=cCustomScope 
+ 
+    hi def link cCustomFunc  Function 
+    hi def link cCustomClass Function 
+    ```
+
+* [vim setting file(.vimrc)](/assets/files/vimrc.tar.gz ".vimrc file")
+  * vim 시작시 설정되는 사항들을 포함하는 파일이다.
+  * 개인 계정의 home directory 에 압축을 풀고 사용하면 되며, 주요 설정 사항은
+  다음과 같다.
+    ```vim
+    "c language syntax color 관련 설정
+    hi Identifier cterm=underline ctermfg=146
+    hi Comment cterm=none ctermfg=247
+    hi CursorLine cterm=none ctermbg=236
+    hi cCustomFunc cterm=bold ctermfg=111
+    hi cCustomClass cterm=bold ctermfg=183
+    ...
+    "mapleader 설정. 이 항목의 아래의 <Leader> 에 해당하는 key이며 여기서는 ","로 설정하였다.
+    let mapleader=","
+    ...
+    "<F2> key를 누르면, :TlistToggle<CR> 이 입력됨.
+    map <F2> :TlistToggle<CR>
+    "quickfix의 next item
+    map <F6> :cn<CR>
+    map <F5> :cp<CR>
+    map <F8> :cnewer<CR>
+    map <F7> :colder<CR>
+    map <Leader><F7> :cope<CR>
+    map <Leader><F8> :ccl<CR>
+    map <F9> :bnext<CR>
+    map <F10> :bprevious<CR>
+     
+    "=============gnu global keymap=============
+     
+    ",gd 입력. 현재 cursor가 위치한 string을 tag에서 검색(definition등)
+    nmap <Leader>gd :Gtags <C-R>=expand("<cword>")<CR><CR> 
+    ",gr 입력. 현재 cursor가 위치한 string으로 reference검색.사용하는 곳의 위치를 보여줌.
+    nmap <Leader>gr :Gtags -r <C-R>=expand("<cword>")<CR><CR>
+    ",gs 입력. 현재 cursor가 위치한 string으로 symbol 검색.(variable등)
+    nmap <Leader>gs :Gtags -s <C-R>=expand("<cword>")<CR><CR>
+    ",gg 입력, --grep pattern 검색, 모든 파일에서 검색, (h, c, txt 등)
+    nmap <Leader>gg :Gtags -go <C-R>=expand("<cword>")<CR><CR>
+    ",gp 입력, 파일명 검색 
+    nmap <Leader>gp :Gtags -Po <C-R>=expand("<cword>")<CR><CR>
+    ",ge 입력, --regexp 검색. 
+    nmap <Leader>ge :Gtags -ge <C-R>=expand("<cword>")<CR><CR>
+     
+    " 위의 사용법과 동일하며, case sensitivity를 ignore
+    nmap <Leader>igd :Gtags -i <C-R>=expand("<cword>")<CR><CR>
+    nmap <Leader>igr :Gtags -ir <C-R>=expand("<cword>")<CR><CR>
+    nmap <Leader>igs :Gtags -is <C-R>=expand("<cword>")<CR><CR>
+    nmap <Leader>igg :Gtags -igo <C-R>=expand("<cword>")<CR><CR>
+    nmap <Leader>igp :Gtags -iPo <C-R>=expand("<cword>")<CR><CR>
+    nmap <Leader>ige :Gtags -ige <C-R>=expand("<cword>")<CR><CR>
+     
+    "위의 사용법과 동일하며, 한가지 차이점은 위의 명령은 현재 커서 위치의 string으로 검색
+    "아래 명령은 검색하려는 string을 직접 입력함
+    nmap <Leader>ld :Gtags
+    nmap <Leader>lr :Gtags -r
+    nmap <Leader>ls :Gtags -s
+    nmap <Leader>lg :Gtags -go
+    nmap <Leader>lp :Gtags -Po
+    nmap <Leader>le :Gtags -ge
+     
+    nmap <Leader>ild :Gtags -i
+    nmap <Leader>ilr :Gtags -ir
+    nmap <Leader>ils :Gtags -is
+    nmap <Leader>ilg :Gtags -igo
+    nmap <Leader>ilp :Gtags -iPo
+    nmap <Leader>ile :Gtags -ige
+
+    ",nt 입력. NERDTreeToggle<CR>
+    map <Leader>nt :NERDTreeToggle<CR>
+
+    " vim window 이동 키
+    nmap <C-H> <C-W>h
+    nmap <C-J> <C-W>j
+    nmap <C-K> <C-W>k
+    nmap <C-L> <C-W>l
+    ```
