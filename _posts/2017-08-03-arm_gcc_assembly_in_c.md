@@ -5,7 +5,6 @@ categories: [arm, assembly]
 tags: [arm, assembly]
 comments: true
 --- 
-Last updated({{ site.time }})  
 
 # arm gcc assembly in C
   * General form of an inline assembler

@@ -5,7 +5,6 @@ categories: [linux, debugging]
 tags: [linux, kernel, debugging ]
 comments: true
 --- 
-Last updated({{ site.time }})  
   
 * kernel source download using git
 ```bash

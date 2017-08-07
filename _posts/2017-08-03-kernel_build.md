@@ -5,8 +5,6 @@ categories: [linux, kernel ]
 tags: [linux, kernel]
 comments: true
 --- 
-Last updated({{ site.time }})  
-
 
 # kernel build 
 

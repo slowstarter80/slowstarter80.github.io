@@ -5,7 +5,6 @@ categories: [linux, kernel]
 tags: [linux, kernel ]
 comments: true
 --- 
-Last updated({{ site.time }})  
   
 # Kernel configuration
 ## The way to do kernel configuration

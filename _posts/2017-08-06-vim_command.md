@@ -5,8 +5,6 @@ category: vim
 tag: vim
 comments: true
 ---
-Last updated({{ site.time }})  
-  
 
 # vim command
  vim command중에서 알아두면 유용하게 사용할 수 있는 command들에 대하여 정리하였다.
