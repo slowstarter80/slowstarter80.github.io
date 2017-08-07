@@ -6,6 +6,7 @@ tag: [vim, gnu global]
 comments: true
 ---
 Last updated({{ site.time }})  
+{% last_modified_at %}
   
 # gnu global 설정하기
  gnu global 은 source code tagging system으로 코드 검색을 빠르게 할 수 있는
