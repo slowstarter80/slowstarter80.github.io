@@ -5,6 +5,10 @@ category: vim
 tag: [vim, gnu global]
 comments: true
 ---
+# reference
+  * [https://www.gnu.org/software/global](https://www.gnu.org/software/global)
+<br />
+<br />
   
 # gnu global 설정하기
  gnu global 은 source code tagging system으로 코드 검색을 빠르게 할 수 있는
@@ -165,3 +169,8 @@ comments: true
     nmap <C-K> <C-W>k
     nmap <C-L> <C-W>l
     ```
+  * vim 에서 gtags를 이용하여 검색 한 후에 auto jump 하는 기능 disable 하기
+    * .vimrc 파일에 아래 코드 추가
+        ```vim
+        let g:Gtags_No_Auto_Jump=1
+	```

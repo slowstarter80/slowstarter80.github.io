@@ -5,6 +5,10 @@ category: gdb
 tag: [gdb]
 comments: true
 ---
+# reference
+  * [https://sourceware.org/gdb/onlinedocs/gdb/TUI.html](https://sourceware.org/gdb/onlinedocs/gdb/TUI.html)
+<br />
+<br />
 
 # TUI 
  GDB의 TUI(Text user Interface)는  curses library를 사용하여 source file,
@@ -75,5 +79,5 @@ comments: true
   * tab stops의 넓이를 지정한다. 
 
 <br />
-* # reference
-  * [https://sourceware.org/gdb/onlinedocs/gdb/TUI.html](https://sourceware.org/gdb/onlinedocs/gdb/TUI.html)
+* [screenshot 1(source & assembly)](/assets/images/gdb_tui_1.jpg)  
+* [screenshot 2(registers & sources)](/assets/images/gdb_tui_2.jpg)

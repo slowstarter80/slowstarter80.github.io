@@ -1,12 +1,12 @@
 ---
 layout: post
-title: qemu를 이용한 kernel booting process debugging
-categories: [linux, kernel, debugging]
-tags: [linux, kernel, debugging, gdb]
+title: qemu를 이용한 bootloader(u-boot) debugging
+categories: [qemu, bootloader, debugging]
+tags: [qemu, debugging, gdb]
 comments: true
 --- 
 # reference
-  * [http://norux.me/38](http://norux.me/38)
+  * [https://wiki.qemu.org/Main_Page](https://wiki.qemu.org/Main_Page) 
 <br />
 <br />
 
