@@ -15,6 +15,7 @@ comments: true
   {% endunless %}{% endfor %}
 </ul>
 
+<br />
 {% for item in (0..site.categories.size) %}{% unless forloop.last %}
   {% capture this_word %}{{ cats_list[item] | strip_newlines }}{% endcapture %}
   <span class="anchor-bookmark" id="{{ this_word }}"></span>
