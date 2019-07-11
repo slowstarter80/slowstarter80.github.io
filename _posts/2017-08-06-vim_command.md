@@ -38,7 +38,7 @@ comments: true
 * how to view man page in vim 
   * [view man page in vim](http://daeny2.tistory.com/entry/vim-%ED%8E%B8%EC%A7%91%EA%B8%B0%EC%97%90%EC%84%9C-man-page-%EB%B3%B4%EA%B8%B0) 
   
-  
-  
-  
+<br />
+* gvim에서 buffer를 tab으로 보는 방법
+  * :tab ball
 
