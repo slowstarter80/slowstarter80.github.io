@@ -40,5 +40,26 @@ comments: true
   
 <br />
 * gvim에서 buffer를 tab으로 보는 방법
-  * :tab ball
+
+```
+   :tab ball
+```
+
+<br />
+* how to delete any trailing whitespace at the end of each line.
+
+```
+  :%s/\s\+$//g
+```
+  * reference
+    * https://vim.fandom.com/wiki/Remove_unwanted_spaces
+  
+<br />
+* how to delete ^M in the file
+
+```
+   :set ffs=unix
+   :e!                   // reload
+   :%s/^M//g             // ^M = ctrl + v + m
+```
 
