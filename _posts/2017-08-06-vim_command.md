@@ -17,17 +17,24 @@ comments: true
     {:.mbtablestyle}  
 
 <br />
+
 * system's clipboard 사용하기
+
   * \"* and "+ registers are for the system's clipboard
-    * ex) "+yy, "+3yy, "+p, "*p
+      * ex) "+yy, "+3yy, "+p, "*p
+      
   * [http://vim.wikia.com/wiki/Copy,_cut_and_paste](http://vim.wikia.com/wiki/Copy,_cut_and_paste) 
 
 <br />
+
 * vim registers 사용하기
+
   * ex) "ayy, "ap, :reg
 
 <br />
+
 * bookmark
+
   * in one file : m+[a~z]
   * move to bookmark : '  + [a~z]
   * in multiple files : m+[A~Z]
@@ -35,10 +42,13 @@ comments: true
   *  [http://vim.wikia.com/wiki/Using_marks](http://vim.wikia.com/wiki/Using_marks) 
 
 <br />
+
 * how to view man page in vim 
+
   * [view man page in vim](http://daeny2.tistory.com/entry/vim-%ED%8E%B8%EC%A7%91%EA%B8%B0%EC%97%90%EC%84%9C-man-page-%EB%B3%B4%EA%B8%B0) 
   
 <br />
+
 * gvim에서 buffer를 tab으로 보는 방법
 
 ```
@@ -46,6 +56,7 @@ comments: true
 ```
 
 <br />
+
 * how to delete any trailing whitespace at the end of each line.
 
 ```
@@ -55,6 +66,7 @@ comments: true
     * https://vim.fandom.com/wiki/Remove_unwanted_spaces
   
 <br />
+
 * how to delete ^M in the file
 
 ```
