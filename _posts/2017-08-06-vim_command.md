@@ -11,16 +11,16 @@ comments: true
 
 
     | command | Description |
-    | ------- | ----------- | 
+    | ------- | ----------- |
     | CTRL + o | move to cursor to previous location in history |
-    | CTRL + I | move to cursor to next location in history | 
-    {:.mbtablestyle}  
+    | CTRL + I | move to cursor to next location in history |
+    {:.mbtablestyle}
 
 <br />
 * system's clipboard 사용하기
   * \"* and "+ registers are for the system's clipboard
-      * ex) "+yy, "+3yy, "+p, "*p     
-  * [http://vim.wikia.com/wiki/Copy,_cut_and_paste](http://vim.wikia.com/wiki/Copy,_cut_and_paste) 
+      * ex) "+yy, "+3yy, "+p, "*p
+  * [http://vim.wikia.com/wiki/Copy,_cut_and_paste](http://vim.wikia.com/wiki/Copy,_cut_and_paste)
 
 <br />
 * vim registers 사용하기
@@ -32,8 +32,14 @@ comments: true
   * move to bookmark : '  + [a~z]
   * in multiple files : m+[A~Z]
   * move to bookmark : '+[A~Z]
-  *  [http://vim.wikia.com/wiki/Using_marks](http://vim.wikia.com/wiki/Using_marks) 
-  
+  *  [http://vim.wikia.com/wiki/Using_marks](http://vim.wikia.com/wiki/Using_marks)
+
+<br />
+* vim에서 a or b 검색하는 방법.
+```
+   :vimgrep /\ca\|b/ <CTRL-R><SHIFT-%>
+```
+
 <br />
 * gvim에서 buffer를 tab으로 보는 방법
 ```
@@ -47,12 +53,23 @@ comments: true
 ```
   * reference
     * https://vim.fandom.com/wiki/Remove_unwanted_spaces
-  
-<br />
 
+<br />
 * how to delete ^M in the file
 ```
    :set ffs=unix
    :e!                   // reload
    :%s/^M//g             // ^M = ctrl + v + m
+```
+
+<br />
+* how to compare 2 directories in vim
+```
+   :DirDiff folder_1 folder_2
+```
+
+<br />
+* how to compare 2 directory lists with vimdiff
+```
+   $ vimdiff <(cd android-4.0.1_r1; find . | sort) <(cd android-4.0.2_r1; find . | sort)
 ```
