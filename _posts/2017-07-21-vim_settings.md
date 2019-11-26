@@ -26,7 +26,7 @@ comments: true
     $ make install
     $ cp ~/bin/share/gtags/gtags.vim $HOME/.vim/plugin/
     $ cp ~/bin/share/gtags/gtags.conf $HOME/.globalrc
-    $ vim $/HOME/.globalrc
+    $ vim $HOME/.globalrc
     ## 여기에서 tag 생성시 제외할  폴더를 "skip" 설정 변수에 지정한다. 
     ```
 
