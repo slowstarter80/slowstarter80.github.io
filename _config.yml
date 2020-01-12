@@ -35,6 +35,15 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-last-modified-at
+  - jekyll-paginate
+  - jekyll-gist
+
+
+# Collections
+collections:
+    wiki:
+        output: true
+        permalink: /:collection/:path/
 
 timezone: Asia/Seoul
 
