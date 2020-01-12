@@ -47,6 +47,11 @@ collections:
 
 timezone: Asia/Seoul
 
+blame: "https://github.com/slowstarter80/slowstarter80.github.io/blame/master/_wiki"
+edit: "https://github.com/slowstarter80/slowstarter80.github.io/edit/master/_wiki"
+issue: "https://github.com/slowstarter80/slowstarter80.github.io/issues/master/_wiki"
+
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

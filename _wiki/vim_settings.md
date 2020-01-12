@@ -1,10 +1,18 @@
 ---
-layout: post
+layout: wiki
 title: 코드 분석을 위한 vim 설정하기(gnu global,  vim plugin)
 category: vim
 tag: [vim, gnu global]
 comments: true
----
+public : true
+parent : vim
+--- 
+* TOC
+{:toc}
+
+
+
+
 # reference
   * [https://www.gnu.org/software/global](https://www.gnu.org/software/global)
 <br />

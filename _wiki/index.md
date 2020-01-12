@@ -11,6 +11,7 @@ comment : false
 
 * [[vim]]
     * [[vim_command]]
+    * [[vim_settings]]
 
 
 
