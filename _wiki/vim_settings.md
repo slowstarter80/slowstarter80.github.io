@@ -5,7 +5,9 @@ category: vim
 tag: [vim, gnu global]
 comments: true
 public : true
-parent : vim
+parent : vim 
+date : 2020-01-15 01:33:04 +0900
+updated : 2020-01-15 01:38:07 +0900
 --- 
 * TOC
 {:toc}
