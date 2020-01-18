@@ -1,19 +1,15 @@
 ---
-layout: wiki
+layout: single
 title: vim command
 date : 2020-01-15 01:33:04 +0900
-updated : 2020-01-15 01:36:39 +0900
+updated : 2020-01-19 02:12:17 +0900
 category: vim
 tag: vim
 comments: true
 public : true
 parent : vim
+permalink : /wiki/vim_command/
 --- 
-* TOC
-{:toc} 
-
-
-adb
 
 # vim command
 * vim command중에서 알아두면 유용하게 사용할 수 있는 command들에 대하여 정리하였다.

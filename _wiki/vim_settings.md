@@ -1,5 +1,5 @@
 ---
-layout: wiki
+layout: single
 title: 코드 분석을 위한 vim 설정하기(gnu global,  vim plugin)
 category: vim
 tag: [vim, gnu global]
@@ -7,13 +7,9 @@ comments: true
 public : true
 parent : vim 
 date : 2020-01-15 01:33:04 +0900
-updated : 2020-01-15 01:38:07 +0900
+updated : 2020-01-19 01:56:57 +0900
+permalink : /wiki/vim_settings/
 --- 
-* TOC
-{:toc}
-
-
-
 
 # reference
   * [https://www.gnu.org/software/global](https://www.gnu.org/software/global)
