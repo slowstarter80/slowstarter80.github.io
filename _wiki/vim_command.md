@@ -2,7 +2,7 @@
 layout: single
 title: vim command
 date : 2020-01-15 01:33:04 +0900
-updated : 2020-01-19 02:12:17 +0900
+last_modified_at: 2020-01-19 21:47:02 +0900
 category: vim
 tag: vim
 comments: true
