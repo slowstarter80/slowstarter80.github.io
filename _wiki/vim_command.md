@@ -2,7 +2,7 @@
 layout: single
 title: vim command
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-01-19 21:47:02 +0900
+last_modified_at: 2020-01-21 00:33:54 +0900
 category: vim
 tag: vim
 comments: true
@@ -40,7 +40,7 @@ permalink : /wiki/vim_command/
   *  [http://vim.wikia.com/wiki/Using_marks](http://vim.wikia.com/wiki/Using_marks)
 
 <br />
-* vim에서 a or b 검색하는 방법.
+* 현재 파일에서 a or b 검색하는 방법. \c는 ignore case
 ```
    :vimgrep /\ca\|b/ <CTRL-R><SHIFT-%>
 ```
