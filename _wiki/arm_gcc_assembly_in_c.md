@@ -1,10 +1,16 @@
 ---
-layout: post
+layout: single
 title: arm gcc assembly in C
-categories: [arm, assembly]
-tags: [arm, assembly]
+date : 2020-01-15 01:33:04 +0900
+last_modified_at: 2020-01-28 01:23:58 +0900
+category: gcc
+tag: [arm, assembly]
 comments: true
+public : true
+parent : gcc
+permalink : /wiki/arm_gcc_assembly_in_c/
 --- 
+
 
 # arm gcc assembly in C
   * General form of an inline assembler
