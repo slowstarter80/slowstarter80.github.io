@@ -1,9 +1,17 @@
 ---
-layout: post
+layout: single
 title: qemu 사용 방법
+date : 2020-01-15 01:33:04 +0900
+last_modified_at: 2020-02-03 00:44:34 +0900
 categories: [qemu]
 tags: [qemu]
-comments: true
+comments: true 
+public : true
+parent : vim
+permalink : /wiki/qemu/
+--- 
+
+
 --- 
 # reference
   * [https://wiki.qemu.org/Main_Page](https://wiki.qemu.org/Main_Page) 

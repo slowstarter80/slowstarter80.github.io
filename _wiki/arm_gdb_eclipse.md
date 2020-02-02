@@ -1,9 +1,15 @@
 ---
-layout: post
+layout: single
 title: qemu 사용시, eclipse cdt를 arm gdb의 front end로 사용하는 방법
-categories: [qemu, gdb, eclipse cdt]
+date : 2020-01-15 01:33:04 +0900
+last_modified_at: 2020-02-03 01:19:54 +0900
+categories: [gdb]
 tags: [qemu, eclipse cdt, gdb]
-comments: true
+comments: true 
+public : true
+parent : vim
+permalink : /wiki/arm_gdb_eclipse/
+
 --- 
 # reference
   * [https://wiki.eclipse.org/CDT/StandaloneDebugger](https://wiki.eclipse.org/CDT/StandaloneDebugger)
@@ -11,9 +17,9 @@ comments: true
 <br />
 
 # elipse cdt(C/C++ development Tooling)를 arm gdb의 fronti end로 사용하기 
- gdb는 아주 많은 기능을 가지고 있지만 CLI 방식이어서 어느정도 능숙해지기까지는 시간이 필요하다. TUI 모드를 사용하면 조금 더 편리하지만 여전히 GUI 방식보다는 불편한 점이 없지 않아 있다. 이 포스트에서는 eclipse cdt를 arm gdb의 front end로
- 사용하는 방법에 대해서 소개하겠다. 
-  eclipse standalone debugger는 아래와 같은 방법으로 설치 할 수 있으며 어느 방법으로 해도 무방하다.
+ gdb는 아주 많은 기능을 가지고 있지만 CLI 방식이어서 어느정도 능숙해지기까지는 시간이 필요하다. TUI 모드를 사용하면 조금 더 편리하지만 여전히 GUI 방식보다는 불편한 점이 있다. 여기에서는 eclipse cdt를 arm gdb의 front end로 사용하는 방법에 대해서 소개하겠다. 
+## eclipse cdt 설치
+  eclipse standalone debugger는 Full eclipse를 설치하거나 standalone으로 설치할 수 있으며 어느 방법으로 해도 무방하다.
 * Full eclipse 설치
   1. eclipse C/C++ IDE를 아래 링크에서 다운로드 하여 압축해제 한다.
     * [https://www.eclipse.org/downloads/](https://www.eclipse.org/downloads/)
@@ -35,14 +41,15 @@ comments: true
     * [ https://eclipse.org/cdt/downloads.php](https://eclipse.org/cdt/downloads.php)
   2. 아래 명령으로 실행단다.
     ```bash
-    $ ./cdtdebug.sh 
+    $ ./cdtdebug 
     ```
 
 <br />
- 위와 같이 설치 한 후, 터미널에서 아래 명령으로 qemu를 실행하고, eclipse debug configration 설정 후 디버깅을 시작하면 된다.
+## Debugging helloworld with cdt
+ 위와 같이 설치 한 후, 터미널에서 아래 명령으로 qemu를 실행하고, eclipse debug configration 설정 후 디버깅을 시작하면 된다. 여기에서는 qemu로 helloworld를 실행한 후 cdtdebug를 실행하여 디버깅 하는 방법을 설명할 것이다.
 * qemu 실행
 ```bash
-$ qemu-system-arm --machine vexpress-a9 -m 1G -nographic -kernel u-boot -s -S 
+$ qemu-arm -g 1234 helloworld
 ```
 
 * eclipse debug configuration 설정
@@ -60,8 +67,11 @@ $ qemu-system-arm --machine vexpress-a9 -m 1G -nographic -kernel u-boot -s -S
   12. **Add...** button을 누른 후, **File System Directory**를 선택 하고, source
       file의 경로 지정
   13. **Apply** button을 누르고, **Debug** button을 누르면, reset vector 함수에서 break된 상태가 화면에 나타난다.
-  14. 이 상태에서 "Step Into", "Step Over"등의 버튼으로 진행하면서 디버깅을
-      한다.
+  14. 이 상태에서 "Step Into", "Step Over"등의 버튼으로 진행하면서 디버깅을 한다.
+
+```bash
+$ qemu-system-arm --machine vexpress-a9 -m 1G -nographic -kernel u-boot -s -S 
+```
 
 <br />
 * [screenshot 1(Debug Configurations - Main)](/assets/images/debug_configurations_main.jpg)

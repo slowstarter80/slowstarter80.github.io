@@ -1,10 +1,16 @@
 ---
-layout: post
+layout: single
 title: GDB debugging시 TUI mode 사용 방법
+date : 2020-01-15 01:33:04 +0900
+last_modified_at: 2020-02-02 23:37:08 +0900
 category: gdb
 tag: [gdb]
 comments: true
----
+public : true
+parent : vim
+permalink : /wiki/gdb_tui_command/
+--- 
+
 # reference
   * [https://sourceware.org/gdb/onlinedocs/gdb/TUI.html](https://sourceware.org/gdb/onlinedocs/gdb/TUI.html)
 <br />
