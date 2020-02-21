@@ -2,7 +2,7 @@
 layout: single
 title: qemu 사용시, eclipse cdt를 arm gdb의 front end로 사용하는 방법
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-02-03 01:19:54 +0900
+last_modified_at: 2020-02-22 02:44:08 +0900
 categories: [gdb]
 tags: [qemu, eclipse cdt, gdb]
 comments: true 
@@ -54,21 +54,28 @@ $ qemu-arm -g 1234 helloworld
 
 * eclipse debug configuration 설정
   1. eclipse menu 에서 **Run -> Debug Configurations** 실행
-  2. **C/C++ Remote Application** 선택 후, 마우스 오른쪽 버튼 누르고 **New** menu 선택
+  2. **C/C++ Remote Application** 선택 후, 마우스 오른쪽 버튼 누르고 **New Configuration** menu 선택  
+  ![title](/assets/images/cdt_new_configuration.png)  
   3. **Name:** 란에 적당한 이름 입력
-  4. **Project:** 란에는 **Browse...** button을 누르고, Executables 선택
+  4. **Project:** 란에는 **Browse...** button을 누르고, Executables 선택  
   5. **C/C++ Application:**란에는 디버깅에 사용할 elf 파일 지정
+  ![title](/assets/images/cdt_configuration_main.png)  
   6. **Debugger** tab 선택
-  7. **Stop on startup at:** 앞에 체크 박스 선택 후, 입력란에 **reset** 입력
+  7. **Stop on startup at:** 앞에 체크 박스 선택 후, 입력란에 **main** 또는 원하는 breakpoint 입력
   8. **GDB debugger:**란에 arm-eabi-gdb의 절대 경로 입력
+  ![title](/assets/images/cdt_configuration_debug.png)  
   9. **Debugger** tab내에 있는 **Connection** tab 선택
-  10. **Type : TCP**, **Host name or IP address : localhost**, **Port number : 1234** 입력
+  10. **Type : TCP**, **Host name or IP address : localhost**, **Port number : 1234** 입력  
+  ![title](/assets/images/cdt_configuration_debug_connection.png)  
   11. **Source** tab 선택
-  12. **Add...** button을 누른 후, **File System Directory**를 선택 하고, source
-      file의 경로 지정
-  13. **Apply** button을 누르고, **Debug** button을 누르면, reset vector 함수에서 break된 상태가 화면에 나타난다.
+  12. **Add...** button을 누른 후, **File System Directory**를 선택 하고, source file의 경로 지정  
+  ![title](/assets/images/cdt_configuration_source.png)  
+  13. **Apply** button을 누르고, **Debug** button을 누르면, main함수에서 break된 상태가 화면에 나타난다.
   14. 이 상태에서 "Step Into", "Step Over"등의 버튼으로 진행하면서 디버깅을 한다.
+  ![title](/assets/images/cdt_helloworld_debug.png)  
 
+
+## Debugging uboot with cdt
 ```bash
 $ qemu-system-arm --machine vexpress-a9 -m 1G -nographic -kernel u-boot -s -S 
 ```
