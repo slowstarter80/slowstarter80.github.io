@@ -2,7 +2,7 @@
 layout: single
 title: qemu 사용시, eclipse cdt를 arm gdb의 front end로 사용하는 방법
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-02-22 02:44:08 +0900
+last_modified_at: 2020-02-23 01:27:51 +0900
 categories: [gdb]
 tags: [qemu, eclipse cdt, gdb]
 comments: true 
@@ -46,7 +46,22 @@ permalink : /wiki/arm_gdb_eclipse/
 
 <br />
 ## Debugging helloworld with cdt
- 위와 같이 설치 한 후, 터미널에서 아래 명령으로 qemu를 실행하고, eclipse debug configration 설정 후 디버깅을 시작하면 된다. 여기에서는 qemu로 helloworld를 실행한 후 cdtdebug를 실행하여 디버깅 하는 방법을 설명할 것이다.
+ 위와 같이 설치 한 후, 터미널에서 아래 명령으로 qemu를 실행하고, eclipse debug configration 설정 후 디버깅을 시작하면 된다. 여기에서는 qemu로 helloworld를 실행한 후 cdtdebug를 실행하여 디버깅 하는 방법을 설명할 것이다. 아래와 같이 helloworld 코드를 작성하고 gcc arm compiler로 컴파일 한다.
+* helloworld.c  
+```c 
+#include <stdio.h>
+int main(void)
+{
+	printf("HelloWorld!\n"); 
+	return 0;
+} 
+``` 
+
+* gcc arm toolchaing으로 code compile
+```bash 
+$ arm-none-linux-gnueabihf-gcc -o helloworld helloworld.c -g -static
+```
+
 * qemu 실행
 ```bash
 $ qemu-arm -g 1234 helloworld
@@ -73,7 +88,12 @@ $ qemu-arm -g 1234 helloworld
   13. **Apply** button을 누르고, **Debug** button을 누르면, main함수에서 break된 상태가 화면에 나타난다.
   14. 이 상태에서 "Step Into", "Step Over"등의 버튼으로 진행하면서 디버깅을 한다.
   ![title](/assets/images/cdt_helloworld_debug.png)  
-
+  15. Terminal window에 아래처럼 HelloWorld!가 출력된다.
+  ```bash 
+  $ qemu-arm -g 1234 helloworld
+  HelloWorld!
+  $ 
+  ``` 
 
 ## Debugging uboot with cdt
 ```bash
