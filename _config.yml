@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : DIY Embedded system
+title                    : Study Embedded system
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "slowstarter80"
@@ -111,7 +111,7 @@ github_username:  slowstarter80
 author:
   name             : "slowstarter80"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "A person who wants to develop"
+  bio              : "You will never know until you try."
   location         : "South Korea"
   email            :
   links:
