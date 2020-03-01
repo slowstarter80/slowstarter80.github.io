@@ -1,11 +1,13 @@
 ---
-layout: post
+layout: single
 title: kernel configuration
 categories: [linux, kernel]
 tags: [linux, kernel ]
 comments: true
---- 
-  
+date : 2020-01-15 01:33:04 +0900
+last_modified_at: 2020-03-01 23:44:14 +0900
+---
+
 # Kernel configuration
 ## The way to do kernel configuration
   * Run the following command for a full list of make target
@@ -15,7 +17,7 @@ comments: true
   * 'O' option in command line or 'KBUILD_OUTPUT' variable in Makefile can be used to set output directory.
 
 
-  1.  Run 'make' command with pre-defined defconfig file(ex. vexpress_defconfig).  
+  1.  Run 'make' command with pre-defined defconfig file(ex. vexpress_defconfig).
      Then, '.config' and 'include/generated/autoconf.h' files will be generated in output directory.
         ```bash
         $ make ARCH=arm vexpress_defconfig
@@ -25,14 +27,14 @@ comments: true
         ```bash
         $ make ARCH=arm menuconfig
         ```
-  3. Run the following command to build kernel binary. Cross compiler need to be installed if you do cross-platform compilation.  
+  3. Run the following command to build kernel binary. Cross compiler need to be installed if you do cross-platform compilation.
 Kernel binary will be generated in output directory
         ```bash
         $ make -j4 ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabi- all
         ```
 
 ## The way to do kernel configuration
-  * 'O' option in command line or KBUILD_OUTPUT in makefile  
+  * 'O' option in command line or KBUILD_OUTPUT in makefile
     _**- Makefile at the root of the kernel source**_
     ```make
     # kbuild supports saving output files in a separate directory.
@@ -51,11 +53,11 @@ Kernel binary will be generated in output directory
     # variable.
     ```
   * Almost all source files related with kernel configuration are in 'scripts' folder at the root of the kernel source
-  * 'config' and 'include/generated/autoconf.h' files are generated after kernel configuration  
+  * 'config' and 'include/generated/autoconf.h' files are generated after kernel configuration
     _**- scripts/kconfig/confdata.c**_
     ```c
     int conf_write_autoconf(void);   //autoconf.h
-    int conf_write(const char *name);    //.config  
+    int conf_write(const char *name);    //.config
     ```
 
   * _**- include/linux/kconfig.h**_
@@ -72,7 +74,7 @@ Kernel binary will be generated in output directory
                     -I$(srctree)/include/uapi \
                     -Iinclude/generated/uapi \
                     -include $(srctree)/include/linux/kconfig.h
-     
+
     # Use LINUXINCLUDE when you must reference the include/ directory.
     # Needed to be compatible with the O= option
     LINUXINCLUDE    := \

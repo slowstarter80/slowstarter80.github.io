@@ -4,15 +4,15 @@ title: qemu를 이용한 bootloader(u-boot) debugging
 categories: [qemu, bootloader, debugging]
 tags: [qemu, debugging, gdb]
 comments: true
---- 
+---
 # reference
-  * [https://wiki.qemu.org/Main_Page](https://wiki.qemu.org/Main_Page) 
+  * [https://wiki.qemu.org/Main_Page](https://wiki.qemu.org/Main_Page)
 <br />
 <br />
 
-# qemu 
+# qemu
 ## qemu-system-arm
-  * run ARM virtual machine 
+  * run ARM virtual machine
   * kernel build
     * ex)
         ```bash
@@ -23,19 +23,19 @@ comments: true
     	```
   * init process
     * ex) init.c
-      ```c 
+      ```c
       #include <stdio.h>
 
       int main(int argc, char* argv[])
       {
               printf("\n");
               printf("My Gentoo ARM Init!!!\n");
-                       
+
               for (int i = 0; i < 100; i++)
               {
                       sleep(1);
               }
-                     
+
               return 0;
       }
 
@@ -62,15 +62,15 @@ comments: true
          Remote debugging using :1234
          warning: Can not parse XML target description; XML support was disabled at compile time
          0x80000000 in ?? ()
-         
+
          (gdb) b *0x80010000
          Breakpoint 1 at 0x80010000
-         
+
          (gdb) c
          Continuing.
-         
+
          Breakpoint 1, 0x80010000 in ?? ()
-         
+
          (gdb) load out/arch/arm/boot/compressed/vmlinux 0x80010000
          Loading section .text, size 0x38f4 lma 0x80010000
          Loading section .rodata, size 0xcc4 lma 0x800138f4
@@ -80,15 +80,15 @@ comments: true
          Loading section .pad, size 0x8 lma 0x80362df0
          Start address 0x0, load size 3485173
          Transfer rate: 8863 KB/sec, 2026 bytes/write.
-         
+
          (gdb) add-symbol-file out/arch/arm/boot/compressed/vmlinux 0x80010000
          add symbol table from file "out/arch/arm/boot/compressed/vmlinux" at
          	.text_addr = 0x80010000
          (y or n) y
          Reading symbols from out/arch/arm/boot/compressed/vmlinux...done.
-         
+
          (gdb) set $pc=0x80000000
-         
+
          (gdb) si
          0x80000004 in ?? ()
          (gdb)
@@ -98,20 +98,20 @@ comments: true
         * Physical address is 0x80000000 and virtual address is 0xC0000000. Therefore, “-0x40000000” offset is needed when load vmlinux
         * We can know “.text” address by using “armv7a-hardfloat-linux-gnueabi-readelf -S out/vmlinux”
 
-            ```c 
+            ```c
             (gdb) target remote:1234
             Remote debugging using :1234
             warning: Can not parse XML target description; XML support was disabled at compile time
             0x80000000 in ?? ()
-            
+
             (gdb) b *0x80008000
             Breakpoint 1 at 0x80008000
-            
+
             (gdb) c
             Continuing.
-            
+
             Breakpoint 1, 0x80008000 in ?? ()
-            
+
             (gdb) load out/vmlinux -0x40000000
             Loading section .head.text, size 0x26c lma 0x80008000
             Loading section .text, size 0x49c984 lma 0x80008280
@@ -141,17 +141,17 @@ comments: true
             Loading section .data..page_aligned, size 0x1000 lma 0x8069a000
             Start address 0xc0008000, load size 6884473
             Transfer rate: 9311 KB/sec, 2023 bytes/write.
-            
+
             (gdb) add-symbol-file out/vmlinux 0x80008280            #after enabling MMU, the offset is 0xc0008280
             add symbol table from file "out/vmlinux" at
             	.text_addr = 0x80008280
             (y or n) y
             Reading symbols from out/vmlinux...done.
-            
+
             (gdb) set $pc=0x80008000
-            
+
             (gdb)
-            
+
             ```
 
 ## qemu-arm
@@ -160,7 +160,7 @@ comments: true
   ```bash
   $ qemu-arm mov
   ```
-  * ex) to debug width gdb, add '-g port' option to command 
+  * ex) to debug width gdb, add '-g port' option to command
   ```bash
   $ qemu-arm -g 5039 mov
   ```
@@ -181,25 +181,25 @@ comments: true
     <http://www.gnu.org/software/gdb/documentation/>.
     For help, type "help".
     Type "apropos word" to search for commands related to "word".
-    
-    
+
+
     (gdb) file mov
     Reading symbols from mov...done.
-    
-    
+
+
     (gdb) target remote:5039
     Remote debugging using :5039
     warning: Can not parse XML target description; XML support was disabled at compile time
     0x00010414 in _start ()
-    
-    
+
+
     (gdb) b main
     Breakpoint 1 at 0x10590: file mov.c, line 34.
-    
-    
+
+
     (gdb) c
     Continuing.
-    
+
     Breakpoint 1, main () at mov.c:34
     34              printf("\n+-------------------+\n");
     (gdb)

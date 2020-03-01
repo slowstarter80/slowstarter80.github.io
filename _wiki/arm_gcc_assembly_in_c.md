@@ -9,7 +9,7 @@ comments: true
 public : true
 parent : gcc
 permalink : /wiki/arm_gcc_assembly_in_c/
---- 
+---
 
 
 # arm gcc assembly in C
@@ -31,7 +31,7 @@ asm("mov    %[result], %[value], ror #1"
 );
    ```
   * ex3) old form
-   ```c 
+   ```c
 asm("mov %0, %1, ror #1" : "=r" (result) : "r" (value));
    ```
   * ex4) you can write more than one assembler instruction in a single inline asm statement. To make it more readable, you can put each instruction on a separate line.
@@ -44,7 +44,7 @@ asm volatile(
 );
    ```
   * To prevent code opmization by compiler, you need to use 'volatie' keyword.
-  * Constraint characters may be prepended by a single constraint modifier. Constraints without a modifier specify read-only operands. Modifiers are: 
+  * Constraint characters may be prepended by a single constraint modifier. Constraints without a modifier specify read-only operands. Modifiers are:
 
     | Modifier  | Specifies  |
     |:---------:|:-----------:|
@@ -70,25 +70,25 @@ asm volatile(
 
     ```c
     #include <stdio.h>
-    
+
     int asm_mov_ex(int x, int y);
-    
+
     __asm__ (".global asm_mov_ex	\n\
     		asm_mov_ex:	\n\
     		mov r0, r1	\n\
     		mov pc, lr	\n\
     		");
-    
+
     int main(void)
     {
     	int mov;
     	printf("\n+-------------------+\n");
     	printf("|ARM Instruction MOV|\n");
     	printf("\n+-------------------+\n");
-    
+
     	mov = asm_mov_ex(3, 4);
     	printf("mov = %d\n\n", mov);
-    
+
     	return 0;
     }
     ```
@@ -98,29 +98,29 @@ asm volatile(
 
     ```c
     #include <stdio.h>
-    
+
     int asm_lsl_ex(int x, int y)
     {
     	int a;
-    
+
     __asm__ volatile( "lsl	%[param1], %[param2], %[param3]	\n\t"
     	:[param1] "=r" (a): [param2] "r" (x), [param3] "r"(y):
     	);
-    
+
     	return a;
-    
-    } 
-    
+
+    }
+
     int main(void)
     {
     	int mov;
     	printf("\n+-------------------+\n");
     	printf("|ARM Instruction LSL|\n");
     	printf("\n+-------------------+\n");
-    
+
     	mov = asm_lsl_ex(2, 3);
     	printf("mov = %d\n\n", mov);
-    
+
     	return 0;
     }
     ```

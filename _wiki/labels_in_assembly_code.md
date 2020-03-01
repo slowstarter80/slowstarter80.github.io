@@ -9,7 +9,7 @@ comments: true
 public : true
 parent : gcc
 permalink : /wiki/labels_in_assembly_code/
---- 
+---
 
 
 # Labels in assembly code

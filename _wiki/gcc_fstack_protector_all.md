@@ -5,21 +5,21 @@ date : 2020-02-23 01:33:04 +0900
 last_modified_at: 2020-02-23 02:39:38 +0900
 categories: [gccj]
 tags: [gcc]
-comments: true 
+comments: true
 public : true
 parent : vim
 permalink : /wiki/gcc_fstack_protector_all/
---- 
+---
 
 
---- 
+---
 # reference
 <br />
 
 # fstack-protector-all
 
 ## source code
-```c 
+```c
 #include <stdio.h>
 
 int testFunc1()
@@ -32,7 +32,7 @@ int testFunc1()
 		printf("%s, %d\n", __func__, arr[j]);
 	}
 
-	return 0; 
+	return 0;
 }
 
 int main(void)
@@ -40,7 +40,7 @@ int main(void)
 	int i = 3;
 	int arr[2] = {0,};
 	int j = 4;
-	
+
 	printf("Input number: ");
 	scanf("%d",  &i);
 	for (j = 0; j < i; j++) {
@@ -51,15 +51,15 @@ int main(void)
 	testFunc1();
 
 	return 0;
-} 
+}
 ```
 ## compile(generate executable file)
-```bash 
+```bash
 $ arm-none-linux-gnueabihf-gcc -o stack_smashing_protector -static stack_smashing_protector.c -fstack-protector-all
 ```
 
 ## compile(generate assembly code)
-```bash 
+```bash
 $ arm-none-linux-gnueabihf-gcc -o stack_smashing_protector -static stack_smashing_protector.c -fstack-protector-all
 ```
 ## generated assembly code

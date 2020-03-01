@@ -20,7 +20,7 @@ permalink : /wiki/
   * [fstack-protector-all](gcc_fstack_protector_all)
 
 # gdb
-* [GDB debugging시 TUI mode 사용 방법](gdb_tui_command) 
+* [GDB debugging시 TUI mode 사용 방법](gdb_tui_command)
 * [qemu 사용시 eclipse cdt를 arm gdb의 front end로 사용하는 방법](arm_gdb_eclipse)
 
 # qemu

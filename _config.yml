@@ -104,7 +104,7 @@ analytics:
     tracking_id          :
     anonymize_ip         : # true, false (default)
 
-twitter_username: 
+twitter_username:
 github_username:  slowstarter80
 
 # Site Author
@@ -312,6 +312,6 @@ defaults:
       read_time: false
       comments: true
       share: true
-      related: false 
+      related: false
       toc: true
       toc_sticky: true
