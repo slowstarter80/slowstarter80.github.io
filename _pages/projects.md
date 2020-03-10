@@ -4,9 +4,9 @@ title : projects
 permalink : /projects/
 ---
 
-뜨믄뜨믄 진행한 프로젝트들입니다.
+These are th projects I've been through.
 
-  * [gtkmm 과 opencv를 이용한 영상처리 프로그램](https://github.com/slowstarter80/gtkmm_image_processing)
+  * [Image processing application using gtkmm and opencv](https://github.com/slowstarter80/gtkmm_image_processing)
     * [wiki](https://github.com/slowstarter80/my_wiki/wiki/Magnolia)
  <br />
  <br />

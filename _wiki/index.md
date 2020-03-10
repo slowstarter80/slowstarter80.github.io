@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-02-23 02:30:44 +0900
+last_modified_at : 2020-03-10 02:00:05 +0900
 tags    : index
 toc     : true
 public  : true
@@ -11,7 +11,7 @@ permalink : /wiki/
 
 # vim
 * [vim_command](vim_command)
-* [vim_settings](vim_settings)
+* [Settings for analyzing code using gnu global in vim](vim_settings)
 
 # gcc
 * [arm gcc assembly in c](arm_gcc_assembly_in_c)
@@ -25,5 +25,8 @@ permalink : /wiki/
 
 # qemu
 * [qemu 사용방법](qemu)
+
+# C/C++
+* [Local variable allocation order on stack](local_variable_allocation_order_on_stack)
 
 

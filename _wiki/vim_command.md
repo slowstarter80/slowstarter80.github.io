@@ -2,7 +2,7 @@
 layout: single
 title: vim command
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-03-02 00:11:22 +0900
+last_modified_at: 2020-03-10 01:32:08 +0900
 category: vim
 tag: vim
 comments: true
@@ -11,9 +11,8 @@ parent : vim
 permalink : /wiki/vim_command/
 ---
 
-# vim command
-* vim command중에서 알아두면 유용하게 사용할 수 있는 command들에 대하여 정리하였다.
-
+Here I summarized vim commands that are used frequently for development.
+* How to move cursor to the location in history
 
     | command | Description |
     | ------- | ----------- |
@@ -22,13 +21,13 @@ permalink : /wiki/vim_command/
     {:.mbtablestyle}
 
 <br />
-* system's clipboard 사용하기
+* How to use system's clipboard
   * \"* and "+ registers are for the system's clipboard
       * ex) "+yy, "+3yy, "+p, "*p
   * [http://vim.wikia.com/wiki/Copy,_cut_and_paste](http://vim.wikia.com/wiki/Copy,_cut_and_paste)
 
 <br />
-* vim registers 사용하기
+* How to use vim registers
   * ex) "ayy, "ap, :reg
 
 <br />
@@ -40,13 +39,13 @@ permalink : /wiki/vim_command/
   *  [http://vim.wikia.com/wiki/Using_marks](http://vim.wikia.com/wiki/Using_marks)
 
 <br />
-* 현재 파일에서 a or b 검색하는 방법. \c는 ignore case
+* How to search for "a or b" in the current file. '\c' means ignore case.
 ```
    :vimgrep /\ca\|b/ <CTRL-R><SHIFT-%>
 ```
 
 <br />
-* gvim에서 buffer를 tab으로 보는 방법
+* How to show each buffer in a tab on gvim.
 ```
    :tab ball
 ```
