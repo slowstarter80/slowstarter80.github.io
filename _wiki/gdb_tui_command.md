@@ -1,8 +1,8 @@
 ---
 layout: single
-title: GDB debugging시 TUI mode 사용 방법
+title: Debugging with gdb tui mode
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-02-02 23:37:08 +0900
+last_modified_at: 2020-03-18 02:07:45 +0900
 category: gdb
 tag: [gdb]
 comments: true
@@ -17,38 +17,38 @@ permalink : /wiki/gdb_tui_command/
 <br />
 
 # TUI
- GDB의 TUI(Text user Interface)는  curses library를 사용하여 source file,
- assembly, register info, gdb command등을 분할된 text window에 보여주는 terminal iterface 이다. TUI mode를 사용하면,
- GDB를 조금 더 편리하게 사용할 수 있다. TUI는 아래와 같은 방법으로 사용 할 수 있다.
+ Text User Interface(TUI) mode of GDB a terminal interface showing source code/assembly/register information/gdb commands in adevidec text window.
+ It provides more convenient debugging  environment to users.
+ TUI mode can be used in the following ways.
+
  ```bash
  $ gdb -tui
  ```
- 또는, gdb를 실행 한 후에 tui command를 실행한다.
- 아래는 주요 tui command 리스트이다.
+ Or after running GDB, execute the tui command.
+ The following are main tui commands.
 
 * tui enable
-  * Activate TUI mode.
+  * Activates TUI mode.
 * tui disable
-  * Disable TUI mode.
+  * Disables TUI mode.
 * info win
-  * 현재 디스플레이 된 윈도우와 그 윈도우의 사이즈를 보여준다.
-* layout name
-  * name에 보기를 원하는 윈도우명을 지정한다.(ex. layout src,  layout next)
+  * Shows the currently displayed window and its size..
+* layout \<name\>
+  * Shows the window corresponding to \<name\>.(ex. layout src,  layout next)
     * next
-      * 다음 레이아웃을 보여준다.
+      * Shows next layout.
     * prev
-      * 이전 레이아웃을 보여준다.
+      * Shows previous layout.
     * src
-      * 소스 윈도우와 커맨드 윈도우를 보여준다.
+      * Shows source code window and command window.
     * asm
-      * 어셈블리 윈도우와 커맨드 윈도우를 보여준다.
+      * Shows assembly code window and command window.
     * split
-      * 소스 윈도우, 어셈블리 윈도우, 커맨드 윈도우를 보여준다.
+      * Shows source code window, assembly code window and command window.
     * regs
-      * 레지스터 윈도우를 보여준다.
-* focus name
-  * 포커스를 가지는 윈도우를 지정한다.(ex. focus regs,  layout regs)
-    name에는 아래와 같은 윈도우 명을 사용할 수 있다.
+      * Shows register window.
+* focus \<name\>
+  * Sets the window corresponding to \<name\> have focus.(ex. focus regs,  layout regs)
     * next
     * prev
     * src
@@ -56,33 +56,33 @@ permalink : /wiki/gdb_tui_command/
     * regs
     * cmd
 * refresh
-  * 현재 screen을 refresh 한다. Ctrl + L 과 동일한 기능을 한다.
+  * Refreshes current screen. Same with \<Ctrl + L\> .
 * tui reg group
-  * register group별로 디스플레이 한다.
+  * Shows by register group.
     * next
-      * 반복적으로 next register group을 보여준다.
+      * Shows next register group.
     * prev
-      * 반복적으로 prev register group을 보여준다.
+      * Shows previous register group.
     * general
-      * general register groups을 보여준다.
+      * Shows general register groups.
     * float
-      * floating point register group을보여준다.
+      * Shows floating point register group.
     * system
-      * system register group을 보여준다.
+      * Shows system register group.
     * vector
-      * vector register groupt을 보여준다. Display the vector registers.
+      * Shows vector register groupt.
     * all
-      * 모든 register 들을 보여준다.
+      * Shows all registers.
 
 * update
-  * 소스 윈도우와 현재 실행위치를 업데이트 한다.
-* winheight name +count
-  name 윈도우의 height를 count 만큼 증가한다.
-* winheight name -count
-  name 윈도우의 height를 count 만큼 감소한다.
+  * Updates source code window and current execution point.
+* winheight \<name\> +count
+  * Increases the window's height corresponding to \<name\>
+* winheight \<name\> -count
+  * Decrease the window's height corresponding to \<name\>
 
 * tabset nchars
-  * tab stops의 넓이를 지정한다.
+  * set the width of tab stops
 
 <br />
 * [screenshot 1(source & assembly)](/assets/images/gdb_tui_1.jpg)

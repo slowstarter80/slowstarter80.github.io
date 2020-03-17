@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-03-10 02:00:05 +0900
+last_modified_at : 2020-03-18 02:31:59 +0900
 tags    : index
 toc     : true
 public  : true
@@ -20,8 +20,8 @@ permalink : /wiki/
   * [fstack-protector-all](gcc_fstack_protector_all)
 
 # gdb
-* [GDB debugging시 TUI mode 사용 방법](gdb_tui_command)
-* [qemu 사용시 eclipse cdt를 arm gdb의 front end로 사용하는 방법](arm_gdb_eclipse)
+* [Debugging with GDB TUI mode](gdb_tui_command)
+* [How to use eclipse cdt as front end of arm gdb](arm_gdb_eclipse)
 
 # qemu
 * [qemu 사용방법](qemu)
