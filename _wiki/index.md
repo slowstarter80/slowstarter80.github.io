@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-03-18 02:31:59 +0900
+last_modified_at : 2020-03-19 01:53:49 +0900
 tags    : index
 toc     : true
 public  : true
@@ -24,7 +24,7 @@ permalink : /wiki/
 * [How to use eclipse cdt as front end of arm gdb](arm_gdb_eclipse)
 
 # qemu
-* [qemu 사용방법](qemu)
+* [How to use qemu](qemu)
 
 # C/C++
 * [Local variable allocation order on stack](local_variable_allocation_order_on_stack)
