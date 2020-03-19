@@ -1,8 +1,8 @@
 ---
 layout: single
-title: qemu 사용 방법
+title: How to use qemu
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-02-03 00:44:34 +0900
+last_modified_at: 2020-03-20 02:23:12 +0900
 categories: [qemu]
 tags: [qemu]
 comments: true
@@ -10,7 +10,6 @@ public : true
 parent : vim
 permalink : /wiki/qemu/
 ---
-
 
 ---
 # reference
@@ -21,27 +20,25 @@ permalink : /wiki/qemu/
 <br />
 
 # qemu
-QEMU 는 어떤 특정 machine 또는 cpu에 대한 emulator 기능을 제공하는 가상화
-소프트웨어이다. 예를 들면, arm core용 부트로더나 커널 또는 그 외의 프로그램 동작을 확인해 보려면 arm core가 내장된 Hw보드에 직접 바이너리를 Load하여 확인해보거나, 또는 qemu를 이용하여 실제 HW 보드가 없이도 어느정도 동작 확인이 가능하다. 가상 환경이므로, 실제 HW 입출력등의 동작을 확인하는 것에는 제약이 따른다.
- 크게 qemu-system-\<target machine\>와 qemu-\<target machine> 형태의 프로그램이 있는데, 여기서는 실제
- 사용해본 qemu-system-arm과 qemu-arm에 대해서 소개하겠다.
+QEMU is a virtualization software that provides emulator functions for some specific machine or CPU. So even if you don't have an real hardware board, it is possible to emulate it with QEMU. However since it is a virtual environment, there are limitations in checking the operation such as real HW input and output.
+There are two types of programs : qemu-system-\<target machine\> and qemu-\<target machine\>, here I will introduce the qemu-system-arm and qemu-arm.
 ## qemu-system-arm
- qemu-system-arm은 arm machine용 emulator이다. arm toolchain으로 bootloader나
- linux kernel을 빌드 후, qemu-system-arm으로 동작 시켜 볼 수 있다. qemu에서
- 지원되는 보드와 cpu list는 아래 커맨드로 확인해 볼 수 있다.
-  * qemu 에서 지원하는 board list
-
+ qemu-system-arm is an emulator for arm machines. After building a bootloader or linux kernel with the arm toolchain, you can run with qemu-system-arm.
+ You can check the board and CPU list supported by QEMU with the following command.
+  * Board list supported by QEMU 
     ```bash
-    $ qemu-system-arm --machine help
+    $ qemu-system-arm --machine help 
     Supported machines are:
     akita                Sharp SL-C1000 (Akita) PDA (PXA270)
     ast2500-evb          Aspeed AST2500 EVB (ARM1176)
+    ast2600-evb          Aspeed AST2600 EVB (Cortex A7)
     borzoi               Sharp SL-C3100 (Borzoi) PDA (PXA270)
     canon-a1100          Canon PowerShot A1100 IS
     cheetah              Palm Tungsten|E aka. Cheetah PDA (OMAP310)
     collie               Sharp SL-5500 (Collie) PDA (SA-1110)
     connex               Gumstix Connex (PXA255)
-    cubieboard           cubietech cubieboard
+    cubieboard           cubietech cubieboard (Cortex-A9)
+    emcraft-sf2          SmartFusion2 SOM kit from Emcraft (M2S010)
     highbank             Calxeda Highbank (ECX-1000)
     imx25-pdk            ARM i.MX25 PDK board (ARM926)
     integratorcp         ARM Integrator/CP (ARM926EJ-S)
@@ -49,7 +46,16 @@ QEMU 는 어떤 특정 machine 또는 cpu에 대한 emulator 기능을 제공하
     lm3s6965evb          Stellaris LM3S6965EVB
     lm3s811evb           Stellaris LM3S811EVB
     mainstone            Mainstone II (PXA27x)
+    mcimx6ul-evk         Freescale i.MX6UL Evaluation Kit (Cortex A7)
+    mcimx7d-sabre        Freescale i.MX7 DUAL SABRE (Cortex A7)
+    microbit             BBC micro:bit
     midway               Calxeda Midway (ECX-2000)
+    mps2-an385           ARM MPS2 with AN385 FPGA image for Cortex-M3
+    mps2-an505           ARM MPS2 with AN505 FPGA image for Cortex-M33
+    mps2-an511           ARM MPS2 with AN511 DesignStart FPGA image for Cortex-M3
+    mps2-an521           ARM MPS2 with AN521 FPGA image for dual Cortex-M33
+    musca-a              ARM Musca-A board (dual Cortex-M33)
+    musca-b1             ARM Musca-B1 board (dual Cortex-M33)
     musicpal             Marvell 88w8618 / MusicPal (ARM926EJ-S)
     n800                 Nokia N800 tablet aka. RX-34 (OMAP2420)
     n810                 Nokia N810 tablet aka. RX-44 (OMAP2420)
@@ -66,6 +72,7 @@ QEMU 는 어떤 특정 machine 또는 cpu에 대한 emulator 기능을 제공하
     sabrelite            Freescale i.MX6 Quad SABRE Lite Board (Cortex A9)
     smdkc210             Samsung SMDKC210 board (Exynos4210)
     spitz                Sharp SL-C3000 (Spitz) PDA (PXA270)
+    swift-bmc            OpenPOWER Swift BMC (ARM1176)
     sx1                  Siemens SX1 (OMAP310) V2
     sx1-v1               Siemens SX1 (OMAP310) V1
     terrier              Sharp SL-C3200 (Terrier) PDA (PXA270)
@@ -75,75 +82,86 @@ QEMU 는 어떤 특정 machine 또는 cpu에 대한 emulator 기능을 제공하
     versatilepb          ARM Versatile/PB (ARM926EJ-S)
     vexpress-a15         ARM Versatile Express for Cortex-A15
     vexpress-a9          ARM Versatile Express for Cortex-A9
+    virt-2.10            QEMU 2.10 ARM Virtual Machine
+    virt-2.11            QEMU 2.11 ARM Virtual Machine
+    virt-2.12            QEMU 2.12 ARM Virtual Machine
     virt-2.6             QEMU 2.6 ARM Virtual Machine
     virt-2.7             QEMU 2.7 ARM Virtual Machine
     virt-2.8             QEMU 2.8 ARM Virtual Machine
-    virt                 QEMU 2.9 ARM Virtual Machine (alias of virt-2.9)
     virt-2.9             QEMU 2.9 ARM Virtual Machine
+    virt-3.0             QEMU 3.0 ARM Virtual Machine
+    virt-3.1             QEMU 3.1 ARM Virtual Machine
+    virt-4.0             QEMU 4.0 ARM Virtual Machine
+    virt-4.1             QEMU 4.1 ARM Virtual Machine
+    virt                 QEMU 4.2 ARM Virtual Machine (alias of virt-4.2)
+    virt-4.2             QEMU 4.2 ARM Virtual Machine
+    witherspoon-bmc      OpenPOWER Witherspoon BMC (ARM1176)
     xilinx-zynq-a9       Xilinx Zynq Platform Baseboard for Cortex-A9
-    z2                   Zipit Z2 (PXA27x)
-    $
+    z2                   Zipit Z2 (PXA27x) 
     ```
 
-  * qemu에서 지원하는 cpu list
+  * CPU list supported by QEMU
     ```bash
-    $ qemu-system-arm --machine none --cpu help
+    $ qemu-system-arm --machine none --cpu help 
     Available CPUs:
-      arm1026
-      arm1136
-      arm1136-r2
-      arm1176
-      arm11mpcore
-      arm926
-      arm946
-      cortex-a15
-      cortex-a7
-      cortex-a8
-      cortex-a9
-      cortex-m3
-      cortex-m4
-      cortex-r5
-      pxa250
-      pxa255
-      pxa260
-      pxa261
-      pxa262
-      pxa270-a0
-      pxa270-a1
-      pxa270
-      pxa270-b0
-      pxa270-b1
-      pxa270-c0
-      pxa270-c5
-      sa1100
-      sa1110
-      ti925t
+    arm1026
+    arm1136
+    arm1136-r2
+    arm1176
+    arm11mpcore
+    arm926
+    arm946
+    cortex-a15
+    cortex-a7
+    cortex-a8
+    cortex-a9
+    cortex-m0
+    cortex-m3
+    cortex-m33
+    cortex-m4
+    cortex-r5
+    cortex-r5f
+    max
+    pxa250
+    pxa255
+    pxa260
+    pxa261
+    pxa262
+    pxa270-a0
+    pxa270-a1
+    pxa270
+    pxa270-b0
+    pxa270-b1
+    pxa270-c0
+    pxa270-c5
+    sa1100
+    sa1110
+    ti925t
     $
     ```
-  * qemu에서 지원하는 보드를 사용하면, qemu가 board에 대한 정보(uart, memory등)를 가지고 있어서, 좀 더 실제 보드에 가깝게 동작확인이 가능하다.
-  * 만약 확인하려는 보드가 qemu에서 지원되는 보드가 아니라면, 유사한 machine을 선택한다(vexpress-a9/a15, virt 등). 다만 이 경우에는 빌드한 바이너리와 machine type이 맞지 않으므로, peripheral(uart등)의 동작은 확인 할 수 없다.
+  * If you use a board supported by QEMU, QEMU has information about the board(such as HW information), so it is possible to emulate more closely to the real board.
+  * If the board you want to use is not supported by QEMU, select a similar machine such as vexpress-a9/a15, virt and so on. However, in this case, the binary you built and machine type do not match, so there are limitations that cannot emulate such as uart behavior.
     ex) if vexpress-a9, if ram size is 1GB, and elf is u-boot,
     ```bash
     $ qemu-system-arm --machine vexpress-a9 -m 1G -kernel u-boot
     ```
-  * new machine을 qemu supported board list에 추가하는 방법은 추후에 업데이트 할 예정이다.
-  * 일반적으로 사용하는 커맨드라인 파라미터는 아래와 같다
+  * Common command line parameters are as follows.
     ```bash
     qemu-system-arm -M versatilepb -nographic -kernel u-boot -s -S  -m 1G
     ```
     * -M : machine
-    * -m : ram size 지정
-    * -nographic : no graphie mode 지정
-    * -kernel : elf file 지정
+    * -m : ram size
+    * -nographic : no graphie mode
+    * -kernel : specify elf file 
     * -s : -gdb tcp::1234 for gdb debugging
-    * -S : do not start as startup(use 'c' to start execution). startup code에서 멈춰 있음. gdb에서 c를 해주어야 시작함.
-  * --cpu \<cpu\>를 사용하면 지정한 cpu대로 동작이 되는 듯 하다. 당연히 바이너리도 빌드 할때 cpu 설정을  맞추어서 빌드 하여야 한다.
-  * 이 외에 다른 커맨드라인 파라미터들에 대해서는 아래 링크를 참조한다.
+    * -S : do not start CPU at startup(use 'c' to start execution). Stopped at startup code. Need to do 'c' command in gdb.
+  * --cpu \<cpu\> is used, it seems to operate according to the specified CPU. You need to build binary according to CPU type.
+  * For other command line parameters, refer to the link below.
     * [https://qemu.weilnetz.de/doc/qemu-doc.html#Commands](https://qemu.weilnetz.de/doc/qemu-doc.html#Commands)
 
 
 ## qemu-arm
- qemu-arm 은 user space용 emulator이다. 호스트 PC에서 arm toolchain으로 hello world!  프로그램을 작성하고 직접 실행해 볼 수 잇다.
+ qemu-arm is an emulator for user space. You can run helloworld program compiled with arm toolchain on host PC.
   * ex) hello_world.c
 
      ```c
@@ -155,11 +173,10 @@ QEMU 는 어떤 특정 machine 또는 cpu에 대한 emulator 기능을 제공하
     }
     ```
 
-  * 컴파일할때는 몇가지 옵션이 있다.
-    * -g : produce debugging information. build된 바이너리에 디버깅 정보가 포함되도록 한다. gdb로 디버깅을 할 경우 컴파일 할 때 -g 를 사용하여야 한다.
-    * -static : shared library에 대한 다이나믹 링킹을 허용하지 않고, 필요한 공유 라이브러리의 내용들을 build된 바이너리에  포함되도록 한다. -static 옵션을 사용하지 않으면, arm-linux-gnueabi-gdb로 remote 디버깅 시, 공유 라이브러리등을 잘 찾지 못해서 디버깅이 잘 되지 않는다. 정확한 원인은 좀 더 연구를 해봐야 한다. -static을 사용할 경우, 바이너리의 크기가 커지는 단점이 있지만 테스트 용도로 사용한다면 -static 옵션을 사용하는것이 간편하다.
-
-  * -g -static 옵션을 추가하여 빌드 하고 qemu-arm 으로 실행한 결과이다.
+  * Options used when compiling
+    * -g : produce debugging information. Debugging information is included in the built binary. When debugging with gdb, "-g" must be used when compiling.
+    * -static : Executable file links libraries statically.
+  * Here is the result of building with the "-g -static" option and running it with qemu-arm.
     ```bash
     $ arm-linux-gnueabi-gcc -o hello_world hello_world.c -g -static
     $ file hello_world
@@ -169,7 +186,7 @@ QEMU 는 어떤 특정 machine 또는 cpu에 대한 emulator 기능을 제공하
     $
     ```
 
-  * -static 옵션은 사용하지 않고, -g 옵션만 추가하여 빌드 하고 qemu-arm 으로 실행한 결과이다. -static 옵션을 사용하지 않으면, qemu-arm을 실행할때, -L 옵션으로 "elf interpreter prefix" 경로를 지정해 주어야 한다. 그렇지 않으면, "/lib/ld-linux-armhf.so.3" 관련 에러가 발생한다.
+  * Here is the result of building with the "-g" option only(without "-static") and running it with qemu-arm. In this case, you maybe need to specify "-L \<path of ld-linux-armhf.so.3\>" when run qemu-arm. Otherwise, there would be an error message which is "/lib/ld-linux-armhf.so.3".
 
     ```bash
     $ arm-linux-gnueabihf-gcc -o hello_world hello_world.c -g
@@ -177,17 +194,17 @@ QEMU 는 어떤 특정 machine 또는 cpu에 대한 emulator 기능을 제공하
     hello_world: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 2.6.32, BuildID[sha1]=06569dfce299146d05c79b0f1a4e31c49cd01ec9, not stripped, with debug_info
     $ qemu-arm hello_world
     /lib/ld-linux-armhf.so.3: No such file or directory
-    $ qemu-arm -L /home/jchsonez/bin/cross_toolchain/2017_05_arm_linux_gnueabihf/arm-linux-gnueabihf/libc/ ./hello_world
+    $ qemu-arm -L ~/bin/cross_toolchain/2017_05_arm_linux_gnueabihf/arm-linux-gnueabihf/libc/ ./hello_world
     Hello World!
     $
     ```
 
-  * -g -static 옵션을 추가하여 빌드하고, gdb 디버깅을 하려면, qemu-arm 을 실행할 때 "-g 5039" 를 추가하여 실행한다.
+  * If you want to debug with gdb after building with "-g -static" option, you need to add "-g \<port number\>" when run qemu.
     ```bash
     qemu-arm -g 5039 ./hello_world
     ```
 
-  * gdb를 실행하고 아래와 같이 gdb command를 실행한다.
+  * Execute gdb and run gdb command as shown below.
     ```bash
     $ arm-linux-gnueabihf-gdb
     GNU gdb (Linaro_GDB-2017.05) 7.12.1.20170417-git
@@ -229,6 +246,3 @@ QEMU 는 어떤 특정 machine 또는 cpu에 대한 emulator 기능을 제공하
     22		printf("Hello World!\n");
     (gdb)
     ```
-  * 위의 예제에서 한가지 문제가 있는데, Breakpoint 1에서 break 된 후 더 이상 ni 또는 si 명령이 제대로 수행되지 않고, 에러가 발생한다. 원인은 잘 모르고, 임시 해결책으로는 "del 1"로 breakpoint 1을 제거하고, ni 나 si 명령을 실행하면 제대로 동작한다.
-
-
