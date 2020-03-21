@@ -300,6 +300,7 @@ defaults:
       related: true
       toc: true
       toc_sticky: true
+      sidebar_category: true
 
 
   # _pages
@@ -315,3 +316,7 @@ defaults:
       related: false
       toc: true
       toc_sticky: true
+      sidebar_category: true
+
+category_dir: categories/
+tag_dir: tags/
