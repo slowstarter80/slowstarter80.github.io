@@ -1,11 +1,11 @@
 ---
 layout: single
 title: gentoo linux 에 Jekyll 설치 하기
-category: web
-tags: [web, jekyll]
+category: [linux]
+tags: [linux, jekyll]
 comments: true
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-03-01 23:41:41 +0900
+last_modified_at: 2020-03-22 12:46:16 +0900
 ---
 
  gentoo linux에서 Jekyll을 설치하는 방법에 대하여 간단히 포스팅한다.

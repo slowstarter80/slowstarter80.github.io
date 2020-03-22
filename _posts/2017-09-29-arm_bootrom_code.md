@@ -1,7 +1,7 @@
 ---
 layout: post
 title: arm boot rom code
-categories: [arm, boot]
+categories: [arm]
 tags: [arm, boot]
 comments: true
 ---

@@ -1,11 +1,11 @@
 ---
 layout: single
 title: qemu를 이용한 kernel booting process debugging
-categories: [linux, kernel, debugging]
+categories: [kernel]
 tags: [linux, kernel, debugging, gdb]
 comments: true
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-03-01 23:45:02 +0900
+last_modified_at: 2020-03-22 12:41:33 +0900
 ---
 # reference
   * [http://norux.me/38](http://norux.me/38)

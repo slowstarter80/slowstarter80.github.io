@@ -1,11 +1,11 @@
 ---
 layout: single
 title: kernel configuration
-categories: [linux, kernel]
+categories: [kernel]
 tags: [linux, kernel ]
 comments: true
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-03-01 23:44:14 +0900
+last_modified_at: 2020-03-22 12:40:19 +0900
 ---
 
 # Kernel configuration

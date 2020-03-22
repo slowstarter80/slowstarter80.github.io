@@ -1,7 +1,7 @@
 ---
 layout: post
 title: kernel analysis
-categories: [linux, debugging]
+categories: [kernel]
 tags: [linux, kernel, debugging ]
 comments: true
 ---
