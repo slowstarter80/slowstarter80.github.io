@@ -1,13 +1,15 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-03-22 12:04:26 +0900
+last_modified_at : 2020-03-23 23:02:40 +0900
 tags    : index
 toc     : true
 public  : true
 comment : false
 permalink : /wiki/
 ---
+
+<!--internel link는 아래처럼 {% post_url 2020-03-21-xxx %} 처럼 하거나, permalink 로 할 수 있다(ex. (/wiki/qemu) )-->
 
 # vim
 * [vim_command]({% post_url 2020-03-21-vim_command %})

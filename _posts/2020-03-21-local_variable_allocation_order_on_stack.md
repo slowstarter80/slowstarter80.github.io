@@ -1,8 +1,8 @@
 ---
 layout: single
-title: Local varaible allocation order on stack
+title: Local variable allocation order on stack
 date : 2020-02-23 01:33:04 +0900
-last_modified_at: 2020-03-22 12:53:33 +0900
+last_modified_at: 2020-03-23 22:46:16 +0900
 categories: [c/c++]
 tags: [programming, c/c++]
 comments: true
