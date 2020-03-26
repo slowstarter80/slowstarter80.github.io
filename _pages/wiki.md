@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-03-24 00:46:36 +0900
+last_modified_at : 2020-03-26 02:33:36 +0900
 tags    : index
 toc     : true
 public  : true
@@ -29,4 +29,5 @@ permalink : /wiki/
 * [How to use qemu]({% post_url 2020-03-21-qemu %})
 
 # C/C++
+* [c++ template]({% post_url 2020-03-25-cpp_template %})
 

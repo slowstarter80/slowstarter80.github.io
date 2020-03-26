@@ -1,9 +1,13 @@
 ---
-layout: post
+layout: single
 title: kernel analysis
+date : 2020-01-15 01:33:04 +0900
+last_modified_at: 2020-03-26 00:53:48 +0900
 categories: [kernel]
 tags: [linux, kernel, debugging ]
 comments: true
+public: true
+permalink : /wiki/kernel_analysis
 ---
 
 * kernel source download using git
