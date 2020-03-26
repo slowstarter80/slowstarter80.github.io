@@ -2,7 +2,7 @@
 layout: single
 title: c++ template
 date : 2020-03-25 23:59:59 +0900
-last_modified_at: 2020-03-26 02:29:58 +0900
+last_modified_at: 2020-03-27 02:22:29 +0900
 categories: [c/c++]
 tags: [programming, c++]
 comments: true
@@ -103,11 +103,51 @@ First output, it's division operation of int types, so the result is 1
 Second output, it's division operation of float type, so the result is 1.33333
 
 
-#template specialization
-Basically, the code is generated with a function or class declared as a template, but it means that the template is not use for what you implemented for a specific type, but use the one you implemented.
+## template specialization
+Basically, code is generated according to a function or class declared as a template, But "template sepcialization" means not to use the function or class that are implemented as template, instead it is works as you implemented it. 
+Here is an example code about function template specialization.  
+### source code
+ex) cpp_template_function_specialization.cpp
+```cpp 
+#include <iostream>
+
+using namespace std; 
+
+template <typename T1>
+void operation(T1 a1, T1 a2)
+{
+	cout<<"operation template function is called" <<endl;
+	cout<<a1<<" + "<<a2<<" = "<<a1 + a2<<endl;
+}
+
+template <>
+void operation(char a1, char a2)
+{
+	cout<<"operation template specialization function is called" <<endl;
+	cout<<int(a1)<<" + "<<int(a2)<<" = "<<a1 + a2<<endl;
+}
 
 
+int main(void)
+{
+	operation<int>(1, 2.5);
+	operation<float>(1.0, 2.5);;
+	operation<char>('1', 2);;
 
+	return 0;
+}
+```
+### Output 
+```bash 
+$ ./cpp_template_function_specialization 
+operation template function is called
+1 + 2 = 3
+operation template function is called
+1 + 2.5 = 3.5
+operation template specialization function is called
+49 + 2 = 51
+```
+Third output, template specialization is applied to the 'char' type 
 
 # Side note.
 If you use template, source code would be more simple because you don't need to declare/implement for each type, but this does not mean that actual executable file size is also smaller than declaring/implementing for each type. 
