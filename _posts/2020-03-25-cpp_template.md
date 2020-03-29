@@ -2,7 +2,7 @@
 layout: single
 title: c++ template
 date : 2020-03-25 23:59:59 +0900
-last_modified_at: 2020-03-27 02:22:29 +0900
+last_modified_at: 2020-03-30 00:53:16 +0900
 categories: [c/c++]
 tags: [programming, c++]
 comments: true
@@ -15,7 +15,7 @@ c++ template allows you to declare/implement a generic function/class that has a
 There are 2 kind of c++ template that one is function template and another is class template. When use template to function, it is a function template, and when use template to class, it is a class template. There is no conceptual difference.
 
 ## function template
-### source code
+### Source code
  Either 'typename' or 'class' can be used in the angle bracksets. they are same meaning.  
 ex) cpp_template_function.cpp
 ```cpp
@@ -37,9 +37,9 @@ t2 sub(t1 a1, t2 a2)
 
 int main(void)
 {
-	cout<<"template int type add 1 + 2 = "<<add<int>(1, 2)<<endl;;
-	cout<<"template float type add 1.0 + 2.0 = "<<add<float>(1.0, 2.0)<<endl;;
-	cout<<"template float type sub 1.0 - 2.0 = "<<sub(1, 2.0)<<endl;;
+	cout<<"template int type add 1 + 2 = "<<add<int>(1, 2)<<endl;
+	cout<<"template float type add 1.0 + 2.0 = "<<add<float>(1.0, 2.0)<<endl;
+	cout<<"template float type sub 1.0 - 2.0 = "<<sub(1, 2.0)<<endl;
 
 	return 0;
 }
@@ -59,7 +59,7 @@ Angle brackets(<>) and data type between angle brackets can be omitted if the da
 
 ## class template
  In case of class template, the angle brackets and data type cannot be omitted.
-### source code
+### Source code
 ex) cpp_template_class.cpp
 ```cpp 
 #include <iostream>
@@ -106,7 +106,7 @@ Second output, it's division operation of float type, so the result is 1.33333
 ## template specialization
 Basically, code is generated according to a function or class declared as a template, But "template sepcialization" means not to use the function or class that are implemented as template, instead it is works as you implemented it. 
 Here is an example code about function template specialization.  
-### source code
+### Source code
 ex) cpp_template_function_specialization.cpp
 ```cpp 
 #include <iostream>
@@ -131,8 +131,8 @@ void operation(char a1, char a2)
 int main(void)
 {
 	operation<int>(1, 2.5);
-	operation<float>(1.0, 2.5);;
-	operation<char>('1', 2);;
+	operation<float>(1.0, 2.5);
+	operation<char>('1', 2);
 
 	return 0;
 }
