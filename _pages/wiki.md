@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-03-26 02:33:36 +0900
+last_modified_at : 2020-04-04 00:29:26 +0900
 tags    : index
 toc     : true
 public  : true
@@ -19,7 +19,7 @@ permalink : /wiki/
 * [arm gcc assembly in c]({% post_url 2020-03-21-arm_gcc_assembly_in_c %})
 * [labels in assembly code]({% post_url 2020-03-21-labels_in_assembly_code %})
 * gcc security compile option
-  * [fstack-protector-all]({% post_url 2020-03-21-gcc_fstack_protector_all %})
+  * [stack smashing protector]({% post_url 2020-03-21-gcc_stack_smashing_protector %})
 
 # gdb
 * [Debugging with GDB TUI mode]({% post_url 2020-03-21-gdb_tui_command %})
@@ -30,4 +30,5 @@ permalink : /wiki/
 
 # C/C++
 * [c++ template]({% post_url 2020-03-25-cpp_template %})
+* [FIFOs / Named pipe]({% post_url 2020-03-29-fifo %})
 
