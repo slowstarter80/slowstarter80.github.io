@@ -2,13 +2,13 @@
 layout: single
 title: gcc stack smashing protector(SSP)
 date : 2020-02-23 01:33:04 +0900
-last_modified_at: 2020-04-04 02:47:40 +0900
+last_modified_at: 2020-04-04 13:07:14 +0900
 categories: [gcc]
 tags: [gcc]
 comments: true
 public : true
 parent : vim
-permalink : /wiki/gcc_fstack_protector_all/
+permalink : /wiki/gcc_stack_smashing_protector/
 ---
 
 
