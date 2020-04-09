@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-04-04 00:29:26 +0900
+last_modified_at : 2020-04-09 01:20:18 +0900
 tags    : index
 toc     : true
 public  : true
@@ -31,4 +31,5 @@ permalink : /wiki/
 # C/C++
 * [c++ template]({% post_url 2020-03-25-cpp_template %})
 * [FIFOs / Named pipe]({% post_url 2020-03-29-fifo %})
+* [c/c++ library on Linux]({% post_url 2020-04-05-c_cpp_library %})
 
