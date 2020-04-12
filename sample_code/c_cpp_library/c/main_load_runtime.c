@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <dlfcn.h>
 #include <stdlib.h>
-#include "fourArithmeticOperation.h"
 
 typedef int (*arithmetic_t)(int, int);
 

@@ -1,12 +1,13 @@
 #include <stdio.h>
+#include <dlfcn.h>
 #include <stdlib.h>
 #include "fourArithmeticOperation.h"
 
+
 int main(void)
 {
-
 	int a = 0, b = 0;;
-
+	
 	printf("Input 2 numbers : \n");
 	scanf("%d", &a);
 	getchar();
