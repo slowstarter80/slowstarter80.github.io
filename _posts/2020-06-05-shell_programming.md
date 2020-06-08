@@ -2,12 +2,11 @@
 layout: single
 title: shell programming
 date : 2020-06-05 01:23:45 +0900
-last_modified_at: 2020-06-05 02:26:12 +0900
+last_modified_at: 2020-06-08 18:07:05 +0900
 categories: [shell]
 tags: [programming,shell]
 comments: true
 public : true
-permalink : /wiki/bash_programming/
 ---
 
 # while loop in shell file

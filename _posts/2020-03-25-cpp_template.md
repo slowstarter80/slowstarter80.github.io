@@ -2,12 +2,11 @@
 layout: single
 title: c++ template
 date : 2020-03-25 23:59:59 +0900
-last_modified_at: 2020-03-30 00:53:16 +0900
+last_modified_at: 2020-06-08 18:06:55 +0900
 categories: [c/c++]
 tags: [programming, c++]
 comments: true
 public : true
-permalink : /wiki/cpp_template/
 ---
 
 # c++ template

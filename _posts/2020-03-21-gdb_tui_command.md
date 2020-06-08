@@ -2,13 +2,12 @@
 layout: single
 title: Debugging with gdb tui mode
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-03-18 02:07:45 +0900
+last_modified_at: 2020-06-08 18:06:43 +0900
 category: gdb
 tag: [gdb]
 comments: true
 public : true
 parent : vim
-permalink : /wiki/gdb_tui_command/
 ---
 
 # reference

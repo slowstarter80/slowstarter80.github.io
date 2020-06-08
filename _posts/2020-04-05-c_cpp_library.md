@@ -2,12 +2,11 @@
 layout: single
 title: c/c++ library on Linux
 date : 2020-04-05 01:23:45 +0900
-last_modified_at: 2020-04-15 03:06:39 +0900
+last_modified_at: 2020-06-08 18:05:37 +0900
 categories: [c/c++]
 tags: [programming, c/c++]
 comments: true
 public : true
-permalink : /wiki/c_cpp_library/
 ---
 
 # c shared library

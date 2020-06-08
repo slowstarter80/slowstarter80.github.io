@@ -2,13 +2,12 @@
 layout: single
 title: vim command
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-03-10 01:32:08 +0900
+last_modified_at: 2020-06-08 18:06:52 +0900
 category: vim
 tag: vim
 comments: true
 public : true
 parent : vim
-permalink : /wiki/vim_command/
 ---
 
 Here I summarized vim commands that are used frequently for development.

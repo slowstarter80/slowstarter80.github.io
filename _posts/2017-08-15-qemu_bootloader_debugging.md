@@ -2,12 +2,11 @@
 layout: single
 title: qemu를 이용한 bootloader(u-boot) debugging
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-03-26 00:57:21 +0900
+last_modified_at: 2020-06-08 18:06:46 +0900
 categories: [qemu]
 tags: [qemu, bootloader, debugging, gdb]
 comments: true
 public : true
-permalink : /wiki/qemu_bootloader_debugging/
 ---
 # reference
   * [https://wiki.qemu.org/Main_Page](https://wiki.qemu.org/Main_Page)

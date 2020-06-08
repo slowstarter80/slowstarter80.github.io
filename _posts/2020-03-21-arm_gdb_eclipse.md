@@ -2,14 +2,12 @@
 layout: single
 title: How to use eclipse cdt as front end of arm gdb
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-03-19 01:45:35 +0900
+last_modified_at: 2020-06-08 18:06:38 +0900
 categories: [gdb]
 tags: [qemu, eclipse cdt, gdb]
 comments: true
 public : true
 parent : vim
-permalink : /wiki/arm_gdb_eclipse/
-
 ---
 # reference
   * [https://wiki.eclipse.org/CDT/StandaloneDebugger](https://wiki.eclipse.org/CDT/StandaloneDebugger)

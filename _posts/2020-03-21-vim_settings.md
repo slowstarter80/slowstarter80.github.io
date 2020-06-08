@@ -7,8 +7,7 @@ comments: true
 public : true
 parent : vim
 date : 2020-01-15 01:33:04 +0900
-last_modified_at : 2020-03-11 03:01:44 +0900
-permalink : /wiki/vim_settings/
+last_modified_at : 2020-06-08 18:06:49 +0900
 ---
 
 # reference

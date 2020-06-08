@@ -2,12 +2,11 @@
 layout: single
 title: function call trace in c program
 date : 2020-04-24 01:23:45 +0900
-last_modified_at: 2020-04-25 03:20:41 +0900
+last_modified_at: 2020-06-08 18:05:54 +0900
 categories: [c/c++]
 tags: [programming, c/c++]
 comments: true
 public : true
-permalink : /wiki/function_call_trace_in_c_program/
 ---
 
 # backtrace functions in c source code
