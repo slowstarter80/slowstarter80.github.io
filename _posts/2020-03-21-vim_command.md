@@ -2,7 +2,7 @@
 layout: single
 title: vim command
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-06-08 18:06:52 +0900
+last_modified_at: 2020-06-10 02:08:09 +0900
 category: vim
 tag: vim
 comments: true
@@ -44,9 +44,36 @@ Here I summarized vim commands that are used frequently for development.
 ```
 
 <br />
+* How to search two words("a" and "b") in either order in the current file. '\c' means ignore case.
+```
+   :vimgrep /\c.*a\&.*b/ <CTRL-R><SHIFT-%>
+```
+  * reference
+    * https://vim.fandom.com/wiki/Search_patterns
+
+<br />
 * How to show each buffer in a tab on gvim.
 ```
    :tab ball
+```
+
+<br />
+* How to switch between tabs on gvim.
+```
+    In normal mode
+    gt  //next tab
+    gT  //Previous tab
+    3gt //go to 3rd tab
+
+    In command mode
+    :tabfirst>
+    :tabnext
+    :tabprev
+    :tablast
+    :tabnext
+    :tabm
+    :tabclose
+    :tabnew
 ```
 
 <br />
