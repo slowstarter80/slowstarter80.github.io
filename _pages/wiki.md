@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-06-05 01:59:35 +0900
+last_modified_at : 2020-06-23 02:03:40 +0900
 tags    : index
 toc     : true
 public  : true
@@ -25,6 +25,7 @@ permalink : /wiki/
 * [Debugging with GDB TUI mode]({% post_url 2020-03-21-gdb_tui_command %})
 * [How to use eclipse cdt as front end of arm gdb]({% post_url 2020-03-21-arm_gdb_eclipse %})
 
+:q
 # qemu
 * [How to use qemu]({% post_url 2020-03-21-qemu %})
 
@@ -33,6 +34,7 @@ permalink : /wiki/
 * [FIFOs / Named pipe]({% post_url 2020-03-29-fifo %})
 * [c/c++ library on Linux]({% post_url 2020-04-05-c_cpp_library %})
 * [function call trace in c program]({% post_url 2020-04-24-function_call_trace_in_c_program %})
+* [Message Queues]({% post_url 2020-06-18-message_queue %})
 
 # shell programming
 * [shell programming]({% post_url 2020-06-05-shell_programming %})
