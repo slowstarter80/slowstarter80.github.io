@@ -2,7 +2,7 @@
 layout: single
 title: vim command
 date : 2020-01-15 01:33:04 +0900
-last_modified_at: 2020-06-10 02:08:09 +0900
+last_modified_at: 2020-06-24 19:34:21 +0900
 category: vim
 tag: vim
 comments: true
@@ -75,6 +75,15 @@ Here I summarized vim commands that are used frequently for development.
     :tabclose
     :tabnew
 ```
+
+<br />
+* how to show trailing whitespace.(assuming you use :set hlsearch)
+```
+  :/\s\+$
+```
+  - $ matches the end of a line or string.
+  - \s matches whitespace character.
+  - \+  matches the preceding pattern element one or more times.
 
 <br />
 * how to delete any trailing whitespace at the end of each line.
