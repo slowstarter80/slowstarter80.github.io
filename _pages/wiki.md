@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-06-24 19:11:51 +0900
+last_modified_at : 2020-07-17 02:31:19 +0900
 tags    : index
 toc     : true
 public  : true
@@ -34,6 +34,7 @@ permalink : /wiki/
 * [c/c++ library on Linux]({% post_url 2020-04-05-c_cpp_library %})
 * [function call trace in c program]({% post_url 2020-04-24-function_call_trace_in_c_program %})
 * [Message Queues]({% post_url 2020-06-18-message_queue %})
+* [Race condition]({% post_url 2020-07-15-race_condition %})
 
 # shell programming
 * [shell programming]({% post_url 2020-06-05-shell_programming %})
