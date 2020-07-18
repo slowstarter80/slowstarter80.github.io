@@ -2,7 +2,7 @@
 layout: single
 title: Race condition
 date : 2020-07-15 00:23:45 +0900
-last_modified_at: 2020-07-17 02:29:18 +0900
+last_modified_at: 2020-07-19 01:54:41 +0900
 categories: [c/c++]
 tags: [programming,c/c++]
 comments: true
@@ -198,3 +198,147 @@ thread_1 i = 1000000, count = 2000000
 thread_0 i = 1000000, count = 2000000
 ```
  In this example, the value of count is 2000000, as expected.
+
+
+# race condition example in C++, and how to avoid race condition by using mutex
+## std_thread.cpp
+```cpp
+#include <thread>
+#include <iostream>
+#include <cstring>
+#include <unistd.h>
+using namespace std;
+#define THREAD_COUNT (2)
+static int count = 0;
+
+static void thread_function(char *arg)
+{
+	int i = 0;
+	char *thread_name = arg;
+	for (i = 0; i < 1000000; i++) {
+		count++;
+		cout<<thread_name<<" i = " <<i<<", count = "<<count<<endl;
+	}
+	sleep(2);
+	cout<<endl;
+	cout<<thread_name<<" i = " <<i<<", count = "<<count<<endl;
+}
+
+int main(int argc, char *argv[])
+{
+	std::thread thread_id[THREAD_COUNT];
+	char thread_name[THREAD_COUNT][20];
+	char buf[20] = {0,};
+
+	for (int i = 0; i < THREAD_COUNT; i++) {
+		snprintf(buf, 9, "thread_%d", i);
+		memcpy(thread_name[i], buf, sizeof(buf));
+	}
+
+	for (int i = 0; i < THREAD_COUNT; i++) {
+		thread_id[i] = std::thread(thread_function, thread_name[i]);
+	}
+
+	for (int i = 0; i < THREAD_COUNT; i++) {
+		thread_id[i].join();
+	}
+
+	return 0;
+}
+```
+## output
+```bash
+...
+thread_1 i = 999998, count = 1999969
+thread_1 i = 999999, count = 1999970
+
+thread_0 i = 1000000, count = 1999970
+
+thread_1 i = 1000000, count = 1999970
+```
+ In above example, there are 2 threads that call thread_function(), and thread_function() has a for loop that executes count++ 1000000 times.
+ Therefor, the final value of count should be 2000000, but the actual result is 1999970, which is less than 2000000. 
+
+
+## std_thread_mutex.cpp
+ In this example code, std::mutex is used to avoid race condition.
+```cpp
+#include <thread>
+#include <iostream>
+#include <cstring>
+#include <unistd.h>
+#include <mutex>
+using namespace std;
+#define THREAD_COUNT (2)
+static int count = 0;
+std::mutex mtx;
+
+static void thread_function(char *arg)
+{
+	int i = 0;
+	char *thread_name = arg;
+	for (i = 0; i < 1000000; i++) {
+		mtx.lock();
+		count++;
+		cout<<thread_name<<" i = " <<i<<", count = "<<count<<endl;
+		mtx.unlock();
+	}
+	sleep(2);
+	cout<<endl;
+	cout<<thread_name<<" i = " <<i<<", count = "<<count<<endl;
+}
+
+int main(int argc, char *argv[])
+{
+	std::thread thread_id[THREAD_COUNT];
+	char thread_name[THREAD_COUNT][20];
+	char buf[20] = {0,};
+
+	for (int i = 0; i < THREAD_COUNT; i++) {
+		snprintf(buf, 9, "thread_%d", i);
+		memcpy(thread_name[i], buf, sizeof(buf));
+	}
+
+	for (int i = 0; i < THREAD_COUNT; i++) {
+		thread_id[i] = std::thread(thread_function, thread_name[i]);
+	}
+
+	for (int i = 0; i < THREAD_COUNT; i++) {
+		thread_id[i].join();
+	}
+
+	return 0;
+}
+```
+## output
+```bash
+...
+thread_0 i = 999998, count = 1999999
+thread_0 i = 999999, count = 2000000
+
+thread_1 i = 1000000, count = 2000000
+
+thread_0 i = 1000000, count = 2000000
+```
+ In this example, the value of count is 2000000, as expected.
+
+
+## using std::lock_guard
+ In c++11, when we use std:mutex, we should call lock() when entering the shared resources protection area and unlock() when exiting the shared resources protection area. Meanwhile, there is another class which we can use mutex. std:lock_guard is a mutex wrapper, when a lock_guard object is created, it locks the the mutex, and when it leaves the csope which the lock_guard object was created, the lock_guard is destructed and the mutex is unlocked.
+
+ ex) using std::lock_guard
+ ```cpp
+static void thread_function(char *arg)
+{
+	int i = 0;
+	char *thread_name = arg;
+	for (i = 0; i < 1000000; i++) {
+		std::lock_guard<std::mutex> lg(mtx);
+		count++;
+		cout<<thread_name<<" i = " <<i<<", count = "<<count<<endl;
+	}
+	sleep(2);
+	cout<<endl;
+	cout<<thread_name<<" i = " <<i<<", count = "<<count<<endl;
+}
+ ```
