@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2020-07-17 02:31:19 +0900
+last_modified_at : 2021-01-10 03:01:57 +0900
 tags    : index
 toc     : true
 public  : true
@@ -35,6 +35,7 @@ permalink : /wiki/
 * [function call trace in c program]({% post_url 2020-04-24-function_call_trace_in_c_program %})
 * [Message Queues]({% post_url 2020-06-18-message_queue %})
 * [Race condition]({% post_url 2020-07-15-race_condition %})
+* [Ways of using standard input/output in c/c++]({% post_url 2021-01-09-ways_of_using_standard_input_output_in_c_cpp %})
 
 # shell programming
 * [shell programming]({% post_url 2020-06-05-shell_programming %})
