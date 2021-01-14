@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2021-01-11 22:27:19 +0900
+last_modified_at : 2021-01-14 11:13:51 +0900
 tags    : index
 toc     : true
 public  : true
@@ -40,3 +40,6 @@ permalink : /wiki/
 
 # shell programming
 * [shell programming]({% post_url 2020-06-05-shell_programming %})
+
+# Arduino
+* [\[Arduino Uno\] 4bits LED binary counter]({% post_url 2021-01-12-arduino_binary_counter %})
