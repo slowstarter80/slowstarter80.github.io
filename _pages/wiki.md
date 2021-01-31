@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2021-01-14 11:13:51 +0900
+last_modified_at : 2021-01-31 23:30:53 +0900
 tags    : index
 toc     : true
 public  : true
@@ -43,3 +43,4 @@ permalink : /wiki/
 
 # Arduino
 * [\[Arduino Uno\] 4bits LED binary counter]({% post_url 2021-01-12-arduino_binary_counter %})
+* [\[Arduino Uno\] 7-Segment Display]({% post_url 2021-01-26-arduino_7segment_display %})
