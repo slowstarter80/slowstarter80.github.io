@@ -2,7 +2,7 @@
 layout: single
 title: \[Arduino Uno\] 7-Segment Display
 date : 2021-01-11 00:23:45 +0900
-last_modified_at: 2021-02-03 00:34:07 +0900
+last_modified_at: 2021-02-03 00:40:32 +0900
 categories: [arduino]
 tags: [arduino]
 comments: true
@@ -10,7 +10,7 @@ public : true
 use_math : true
 ---
 
-# circuit
+# 7 Segment Display
  7 segment is a module representing a number in an embedded system. The number is divided into seven segments and represented by one LED per segment. This means that seven LEDs represent a single number and this is called 7 segment display. One more LED is used to represent decimal point.(So, there are 8 leds in total).
  In order to use 7 LEDs, '+' and '-' pins are required of for each LED, so a total of 14 pins are required. Depending on the connection method, '+' or '-' pins are generally used in common. If '+' is used in common, it is called common anode, while '-' is used in common, it is called common cathode.
  The figure below show the general structure of 7 segment display, the left side show the common anode and the right side shows the common cathode. 
