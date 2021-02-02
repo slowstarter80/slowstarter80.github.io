@@ -2,7 +2,7 @@
 layout: single
 title: \[Arduino Uno\] 7-Segment Display
 date : 2021-01-11 00:23:45 +0900
-last_modified_at: 2021-02-01 03:37:41 +0900
+last_modified_at: 2021-02-03 00:34:07 +0900
 categories: [arduino]
 tags: [arduino]
 comments: true
@@ -29,10 +29,22 @@ use_math : true
  
 ## Common Anode
 ### circuit
- This circut used 7 segment of common anode type, so "5V" is connected to the common pin, and a resistor for controlling the amount of current is connected to the pin of each segment. In case of each LED's forward voltage is 2V and to ensure the current per LED does not exceed 20mA, the calculation is done by the I = V/R formula. 0.02A = (5V-2V)/R,
+ This circuit used 7 segment of common anode type, so "5V" is connected to the common pin, and a resistor for controlling the amount of current is connected to the pin of each segment. In case of each LED's forward voltage is 2V and to ensure the current per LED does not exceed 20mA, the calculation is done by the I = V/R formula. 0.02A = (5V-2V)/R,
  So, 150 ohm resistors were used here.
  
  __The forward voltage and the peak forward current that allowed for 7 segment differ according to the 7 segment type, so you must check them in the datasheet.__
+
+| Arduino pin number | 7 segment pin number |
+|:------------------:|:--------------------:|
+|         4          |         7(a)         |
+|         5          |         6(b)         |
+|         6          |         4(c)         |
+|         7          |         2(d)         |
+|         8          |         1(e)         |
+|         9          |         9(f)         |
+|         10         |        10(g)         |
+|         11         |        7(dp)         |
+|         5V         |     3 or 8(VCC)      |
 
  ![Common_anode_7segment_display](/assets/images/arduino_common_anode_7segment_display.png)
 
@@ -121,8 +133,20 @@ void loop() {
 <br/>
 ## Common Cathode
 ### circuit
- This circut used 7 segment of common cathode type, so "GND" is connected to the common pin.
+ This circuit used 7 segment of common cathode type, so "GND" is connected to the common pin.
  So, 150 ohm resistors were used here.
+ 
+| Arduino pin number | 7 segment pin number |
+|:------------------:|:--------------------:|
+|         4          |         7(a)         |
+|         5          |         6(b)         |
+|         6          |         4(c)         |
+|         7          |         2(d)         |
+|         8          |         1(e)         |
+|         9          |         9(f)         |
+|         10         |        10(g)         |
+|         11         |        7(dp)         |
+|        GND         |     3 or 8(GND)      |
 
  ![Common_cathode_7segment_display](/assets/images/arduino_common_cathode_7segment_display.png)
 
