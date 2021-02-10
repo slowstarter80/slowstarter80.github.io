@@ -299,6 +299,7 @@ defaults:
       share: true
       related: true
       toc: true
+      toc_ads: true
       toc_sticky: true
       sidebar_category: true
 
