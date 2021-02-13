@@ -2,7 +2,7 @@
 layout: single
 title: \[Arduino Uno\] 7-Segment Display
 date : 2021-01-11 00:23:45 +0900
-last_modified_at: 2021-02-03 00:40:32 +0900
+last_modified_at: 2021-02-14 01:48:22 +0900
 categories: [arduino]
 tags: [arduino]
 comments: true
@@ -30,7 +30,11 @@ use_math : true
 ## Common Anode
 ### circuit
  This circuit used 7 segment of common anode type, so "5V" is connected to the common pin, and a resistor for controlling the amount of current is connected to the pin of each segment. In case of each LED's forward voltage is 2V and to ensure the current per LED does not exceed 20mA, the calculation is done by the I = V/R formula. 0.02A = (5V-2V)/R,
- So, 150 ohm resistors were used here.
+ So, 150 ohm can be used as the result of the calculation. But we have one more thing to consider. The datasheet of Atmega328P used in Arduino Uno has the following contents.
+
+  ![Atmega328p dc characteristics](/assets/images/atmega328p_dc_characteristics.png)
+
+ So, in order to comply with this condition, a current smaller than 20mA must be flown. here 330 ohm(under 10mA) was used.
  
  __The forward voltage and the peak forward current that allowed for 7 segment differ according to the 7 segment type, so you must check them in the datasheet.__
 
@@ -43,7 +47,7 @@ use_math : true
 |         8          |         1(e)         |
 |         9          |         9(f)         |
 |         10         |        10(g)         |
-|         11         |        7(dp)         |
+|         11         |        5(dp)         |
 |         5V         |     3 or 8(VCC)      |
 
  ![Common_anode_7segment_display](/assets/images/arduino_common_anode_7segment_display.png)
@@ -52,7 +56,7 @@ use_math : true
  The below is a code that repeatedly prints the numbers from 0 to 9, increasing every second. There is a table for segments that should be on/off according to each number from 0 to 9.
  In case of common anode, it turns on when 0, and turns off when 1.
  In the code below, there are definitions for each number according to the 7 segment type, and by defining/undefining the macro definition "COMMON_CATHODE", only the table are changed and other codes are used the same.
- The "COMMON_CATHOD" was undefined in the code below.
+ The "COMMON_CATHODE" was undefined in the code below.
 
  
 ```c
@@ -134,7 +138,7 @@ void loop() {
 ## Common Cathode
 ### circuit
  This circuit used 7 segment of common cathode type, so "GND" is connected to the common pin.
- So, 150 ohm resistors were used here.
+ So, 330 ohm resistors were used here.
  
 | Arduino pin number | 7 segment pin number |
 |:------------------:|:--------------------:|
@@ -226,7 +230,3 @@ void loop() {
 <video controls autoplay>
   <source type="video/mp4" src="/assets/videos/arduino_common_cathode_7segment.mp4">
 </video>
-
-
-
-
