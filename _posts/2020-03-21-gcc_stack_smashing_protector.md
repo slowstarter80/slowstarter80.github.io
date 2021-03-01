@@ -2,7 +2,7 @@
 layout: single
 title: gcc stack smashing protector(SSP)
 date : 2020-02-23 01:33:04 +0900
-last_modified_at: 2020-06-08 18:06:58 +0900
+last_modified_at: 2021-02-21 18:38:01 +0900
 categories: [gcc]
 tags: [gcc]
 comments: true
@@ -18,10 +18,10 @@ The stack smashing protector is a feature implemented in gcc. When entering func
 There are gcc options which enable/disable stack smashing protector.
 
 
-* -fno-stack-protector : disables stack protection. This is default option.
+* -fno-stack-protector : disables stack protection.
 
 * -fstack-protector : enables stack protection for vulnerable functions that contain buffers larger than 8 bytes.
- This includes functions that call "alloca".
+ This includes functions that call "alloca()".
 
 * -fstack-protector-all adds stack protection to all functions.
 
