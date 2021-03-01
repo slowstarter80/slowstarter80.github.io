@@ -1,7 +1,7 @@
 ---
 layout  : single
 title   : wiki
-last_modified_at : 2021-02-14 23:37:27 +0900
+last_modified_at : 2021-03-02 01:10:08 +0900
 tags    : index
 toc     : true
 public  : true
@@ -46,3 +46,7 @@ permalink : /wiki/
 * [\[Arduino Uno\] 7-Segment Display]({% post_url 2021-01-26-arduino_7segment_display %})
 * [\[Arduino Uno\] analogRead / analogWrite]({% post_url 2021-02-03-arduino_analog_read_write %})
 * [\[Arduino Uno\] External interrupt]({% post_url 2021-02-13-arduino_external_interrupt %})
+
+# Linux tips
+* [How to create files with random data]({% post_url 2021-03-01-how_to_create_files_with_random_data %})
+* [Split compression/decompression]({% post_url 2021-02-28-split_compression_decompression %})
