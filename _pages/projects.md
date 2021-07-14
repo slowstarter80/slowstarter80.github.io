@@ -4,10 +4,10 @@ title : projects
 permalink : /projects/
 ---
 
-These are th projects I've been through.
+These are the personal projects I've been working on.
 
   * [Image processing application using gtkmm and opencv](https://github.com/slowstarter80/gtkmm_image_processing)
-    * [wiki](https://github.com/slowstarter80/my_wiki/wiki/Magnolia)
+  * [RC Car project using Arduino and bluetooth communication](https://github.com/slowstarter80/my_arduino_rc_car)
  <br />
  <br />
  <br />
